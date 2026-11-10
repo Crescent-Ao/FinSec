@@ -1,0 +1,408 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-10",
+  "baseline_id": "base_nf4",
+  "scope": "Aggregated results from the competition evaluation; no individual training or test records.",
+  "protocol": {
+    "target_precision": "NF4 double quantization / BF16 compute, unmerged LoRA",
+    "finance_questions": 1151,
+    "finance_subjects": 34,
+    "gcg_behaviors": 320,
+    "gcg_search_steps": 50,
+    "gcg_search_width": 128,
+    "pair_common_behaviors": 313,
+    "harmbench_classifier": "cais/HarmBench-Llama-2-13b-cls + copyright rules",
+    "mia_members": 2913,
+    "mia_nonmembers": 2913,
+    "mia_min_k_fraction": 0.2,
+    "agent_files": 82,
+    "agent_benign_files": 32,
+    "agent_max_calls": 12,
+    "agent_max_output_tokens": 4096,
+    "agent_context_tokens": 16384
+  },
+  "stages": [
+    {
+      "id": "base_nf4",
+      "label": "基础模型",
+      "plot_label": "基础NF4",
+      "finance": {
+        "correct": 834,
+        "total": 1151,
+        "accuracy": 0.7245873153779322
+      },
+      "gcg": {
+        "successes": 29,
+        "behaviors": 320,
+        "asr": 0.090625
+      },
+      "pair": {
+        "successes": 64,
+        "behaviors": 313,
+        "asr": 0.20447284345047922
+      },
+      "mia": {
+        "loss_score": {
+          "roc_auc": 0.503265013813452,
+          "tpr_at_1pct_fpr": 0.008238928939237899,
+          "achieved_fpr": 0.009612083762444216,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.48599876378114554,
+              0.5183005893696815
+            ],
+            "tpr_at_1pct_fpr": [
+              0.004447851969256395,
+              0.013817517951548303
+            ]
+          }
+        },
+        "min_k_score": {
+          "roc_auc": 0.5058082728453448,
+          "tpr_at_1pct_fpr": 0.008582217645039478,
+          "achieved_fpr": 0.009955372468245795,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.4902092213416542,
+              0.5201652864967286
+            ],
+            "tpr_at_1pct_fpr": [
+              0.003431239651731138,
+              0.013020518235209997
+            ]
+          }
+        }
+      },
+      "agent": {
+        "TP": 68,
+        "FP": 23,
+        "FN": 41,
+        "precision": 0.7472527472527473,
+        "recall": 0.6238532110091743,
+        "f1": 0.68,
+        "benign_false_positive_cases": 3,
+        "tool_calls": 3,
+        "model_calls": 209,
+        "active_tool_calls": 3,
+        "execution_tool_calls": 2,
+        "framework_tool_calls": 164
+      }
+    },
+    {
+      "id": "finance_sft",
+      "label": "金融模型",
+      "plot_label": "金融SFT",
+      "finance": {
+        "correct": 880,
+        "total": 1151,
+        "accuracy": 0.7645525629887054
+      },
+      "gcg": {
+        "successes": 105,
+        "behaviors": 320,
+        "asr": 0.328125
+      },
+      "pair": {
+        "successes": 168,
+        "behaviors": 313,
+        "asr": 0.536741214057508
+      },
+      "mia": {
+        "loss_score": {
+          "roc_auc": 0.5109407512919876,
+          "tpr_at_1pct_fpr": 0.008582217645039478,
+          "achieved_fpr": 0.009612083762444216,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.4929424058906786,
+              0.5271263961602582
+            ],
+            "tpr_at_1pct_fpr": [
+              0.004445964432284542,
+              0.01482184794164474
+            ]
+          }
+        },
+        "min_k_score": {
+          "roc_auc": 0.5112631810548002,
+          "tpr_at_1pct_fpr": 0.007209062821833162,
+          "achieved_fpr": 0.009955372468245795,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.4939883233471047,
+              0.5265064049477796
+            ],
+            "tpr_at_1pct_fpr": [
+              0.004095642929062944,
+              0.012659641567706294
+            ]
+          }
+        },
+        "reference_score": {
+          "roc_auc": 0.5083548315970325,
+          "tpr_at_1pct_fpr": 0.008925506350841057,
+          "achieved_fpr": 0.009955372468245795,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.4947447828485223,
+              0.522343982414067
+            ],
+            "tpr_at_1pct_fpr": [
+              0.005151010515736837,
+              0.01772643891672406
+            ]
+          }
+        }
+      },
+      "agent": {
+        "TP": 77,
+        "FP": 23,
+        "FN": 32,
+        "precision": 0.77,
+        "recall": 0.7064220183486238,
+        "f1": 0.7368421052631579,
+        "benign_false_positive_cases": 1,
+        "tool_calls": 44,
+        "model_calls": 220,
+        "active_tool_calls": 44,
+        "execution_tool_calls": 41,
+        "framework_tool_calls": 164
+      }
+    },
+    {
+      "id": "safety_tools",
+      "label": "安全与工具模型",
+      "plot_label": "安全与工具",
+      "finance": {
+        "correct": 882,
+        "total": 1151,
+        "accuracy": 0.7662901824500434
+      },
+      "gcg": null,
+      "pair": null,
+      "mia": {
+        "loss_score": {
+          "roc_auc": 0.5107389969959587,
+          "tpr_at_1pct_fpr": 0.008238928939237899,
+          "achieved_fpr": 0.009612083762444216,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.49223911024119515,
+              0.5262285014952214
+            ],
+            "tpr_at_1pct_fpr": [
+              0.004816877294300297,
+              0.015169108133103277
+            ]
+          }
+        },
+        "min_k_score": {
+          "roc_auc": 0.5108725178005152,
+          "tpr_at_1pct_fpr": 0.00789564023343632,
+          "achieved_fpr": 0.009612083762444216,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.4927800307461884,
+              0.526537596059058
+            ],
+            "tpr_at_1pct_fpr": [
+              0.004470234579041634,
+              0.012996675697489175
+            ]
+          }
+        },
+        "reference_score": {
+          "roc_auc": 0.5072995104983531,
+          "tpr_at_1pct_fpr": 0.010985238585650533,
+          "achieved_fpr": 0.009955372468245795,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.49409108263281765,
+              0.5213551726944061
+            ],
+            "tpr_at_1pct_fpr": [
+              0.005138778476189536,
+              0.01806701989217327
+            ]
+          }
+        }
+      },
+      "agent": {
+        "TP": 73,
+        "FP": 20,
+        "FN": 36,
+        "precision": 0.7849462365591398,
+        "recall": 0.6697247706422018,
+        "f1": 0.7227722772277227,
+        "benign_false_positive_cases": 0,
+        "tool_calls": 23,
+        "model_calls": 194,
+        "active_tool_calls": 23,
+        "execution_tool_calls": 17,
+        "framework_tool_calls": 164
+      }
+    },
+    {
+      "id": "dpo",
+      "label": "偏好优化模型",
+      "plot_label": "DPO",
+      "finance": {
+        "correct": 883,
+        "total": 1151,
+        "accuracy": 0.7671589921807124
+      },
+      "gcg": {
+        "successes": 58,
+        "behaviors": 320,
+        "asr": 0.18125
+      },
+      "pair": {
+        "successes": 90,
+        "behaviors": 313,
+        "asr": 0.28753993610223644
+      },
+      "mia": {
+        "loss_score": {
+          "roc_auc": 0.5118865924017588,
+          "tpr_at_1pct_fpr": 0.009268795056642637,
+          "achieved_fpr": 0.009612083762444216,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.49354168133740095,
+              0.5277762677105803
+            ],
+            "tpr_at_1pct_fpr": [
+              0.004802415807909002,
+              0.014418125643666324
+            ]
+          }
+        },
+        "min_k_score": {
+          "roc_auc": 0.5113123233103166,
+          "tpr_at_1pct_fpr": 0.009268795056642637,
+          "achieved_fpr": 0.009612083762444216,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.49374760475582713,
+              0.52791186857837
+            ],
+            "tpr_at_1pct_fpr": [
+              0.00479928718275108,
+              0.014746987824021044
+            ]
+          }
+        },
+        "reference_score": {
+          "roc_auc": 0.508320302386322,
+          "tpr_at_1pct_fpr": 0.010985238585650533,
+          "achieved_fpr": 0.009955372468245795,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.495770035759173,
+              0.5219102923639569
+            ],
+            "tpr_at_1pct_fpr": [
+              0.00516138007133609,
+              0.017401309297354957
+            ]
+          }
+        }
+      },
+      "agent": {
+        "TP": 68,
+        "FP": 18,
+        "FN": 41,
+        "precision": 0.7906976744186046,
+        "recall": 0.6238532110091743,
+        "f1": 0.6974358974358974,
+        "benign_false_positive_cases": 2,
+        "tool_calls": 62,
+        "model_calls": 239,
+        "active_tool_calls": 62,
+        "execution_tool_calls": 53,
+        "framework_tool_calls": 164
+      }
+    },
+    {
+      "id": "finsec",
+      "label": "FinSec模型",
+      "plot_label": "FinSec",
+      "finance": {
+        "correct": 888,
+        "total": 1151,
+        "accuracy": 0.7715030408340573
+      },
+      "gcg": {
+        "successes": 53,
+        "behaviors": 320,
+        "asr": 0.165625
+      },
+      "pair": {
+        "successes": 89,
+        "behaviors": 313,
+        "asr": 0.28434504792332266
+      },
+      "mia": {
+        "loss_score": {
+          "roc_auc": 0.5116818919273416,
+          "tpr_at_1pct_fpr": 0.008925506350841057,
+          "achieved_fpr": 0.009268795056642637,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.49313506537951307,
+              0.5273815655740044
+            ],
+            "tpr_at_1pct_fpr": [
+              0.005158249470144484,
+              0.014769737481297245
+            ]
+          }
+        },
+        "min_k_score": {
+          "roc_auc": 0.5109717450886322,
+          "tpr_at_1pct_fpr": 0.008925506350841057,
+          "achieved_fpr": 0.009268795056642637,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.4933605457282303,
+              0.5275667876936225
+            ],
+            "tpr_at_1pct_fpr": [
+              0.0051216962736015635,
+              0.014779367022136667
+            ]
+          }
+        },
+        "reference_score": {
+          "roc_auc": 0.5080318125985424,
+          "tpr_at_1pct_fpr": 0.010985238585650533,
+          "achieved_fpr": 0.009955372468245795,
+          "family_bootstrap_95pct_ci": {
+            "roc_auc": [
+              0.49550591026303376,
+              0.5219770569962816
+            ],
+            "tpr_at_1pct_fpr": [
+              0.005151010515736837,
+              0.01724798652303605
+            ]
+          }
+        }
+      },
+      "agent": {
+        "TP": 71,
+        "FP": 15,
+        "FN": 38,
+        "precision": 0.8255813953488372,
+        "recall": 0.6513761467889908,
+        "f1": 0.7282051282051282,
+        "benign_false_positive_cases": 1,
+        "tool_calls": 58,
+        "model_calls": 227,
+        "active_tool_calls": 58,
+        "execution_tool_calls": 49,
+        "framework_tool_calls": 164
+      }
+    }
+  ]
+}
