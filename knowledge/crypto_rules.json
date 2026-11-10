@@ -1,0 +1,10 @@
+[
+  {"id":"WEAK_HASH","cwe":"CWE-328","rule":"MD5/SHA-1不适用于安全认证、密码存储、签名等抗碰撞场景；非安全校验和须结合上下文判断。"},
+  {"id":"AES_ECB","cwe":"CWE-327","rule":"AES ECB泄露明文块模式；优先使用带认证加密并正确管理nonce。"},
+  {"id":"STATIC_IV_NONCE","cwe":"CWE-329","rule":"CBC要求不可预测IV，GCM等要求同一密钥下nonce唯一；固定值或重复使用须报告。"},
+  {"id":"NONCRYPTO_RANDOM","cwe":"CWE-338","rule":"random模块可用于模拟，不得用于密码重置令牌、密钥等安全随机量；使用secrets或系统安全随机源。"},
+  {"id":"SHORT_RSA","cwe":"CWE-326","rule":"RSA密钥长度小于2048位属于候选弱参数，应结合应用和规则要求确认。"},
+  {"id":"TLS_VERIFY_DISABLED","cwe":"CWE-295","rule":"生产TLS连接不应关闭证书验证；应正确配置CA和主机名验证。"},
+  {"id":"LOW_KDF_COST","cwe":"CWE-916","rule":"极低密码派生迭代次数属于候选弱成本；这里10000只是候选检索阈值，不代表现行推荐合规标准。"},
+  {"id":"HARDCODED_KEY","cwe":"CWE-321","rule":"硬编码生产对称密钥会泄露密钥；测试向量和示例需结合真实用途判断。"}
+]

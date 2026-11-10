@@ -1,0 +1,518 @@
+{
+  "dataset": "SUFE-AIFLM-Lab/FinEval",
+  "revision": "ab300028f8836f14c28e80d4e96984bca9902a85",
+  "archive_sha256": "44467786cfceab0783959ffb674598669207d28122ed6104f837f26a4f926764",
+  "archive_bytes": 507039,
+  "csv_files": [
+    {
+      "file": "dev/advanced_financial_accounting_dev.csv",
+      "sha256": "fd4a9045aec9427dd35901265d9311390fcdb50ebc560b8d190df43b19cd000e",
+      "bytes": 2723
+    },
+    {
+      "file": "dev/accounting_dev.csv",
+      "sha256": "674191ab3bc2ff185723f6ac7d7e4e220b2ce889a118cfb25340a2bf258bef85",
+      "bytes": 3305
+    },
+    {
+      "file": "dev/auditing_dev.csv",
+      "sha256": "9ea4a9f409bbfe2e72864bd13e9061a842b105def68536cef3c1ffdb0f33648f",
+      "bytes": 4081
+    },
+    {
+      "file": "dev/banking_practitioner_qualification_certificate_dev.csv",
+      "sha256": "e33e3d1528a5f38772be4c760dc3a413187f17235b900a5076b5fd7ca0072a8c",
+      "bytes": 2479
+    },
+    {
+      "file": "dev/central_banking_dev.csv",
+      "sha256": "0686162e857716b7c512a21a8b015e73bbef8770cf9e2a6c9570815066cf9b03",
+      "bytes": 3049
+    },
+    {
+      "file": "dev/certified_management_accountant_dev.csv",
+      "sha256": "e468ad0c26df406611a8bea5c340ec6cec3de3c3310c1fe76d0992657fe89a81",
+      "bytes": 2562
+    },
+    {
+      "file": "dev/certified_practising_accountant_dev.csv",
+      "sha256": "6544500bc50ace15450c27fa5c0194691e47cecc0ee67ce74bf04b21e161d783",
+      "bytes": 3712
+    },
+    {
+      "file": "dev/china_actuary_dev.csv",
+      "sha256": "b627701d40662a9db3e03ddb72860f6df8468b3821c5e6150171dc3bbef86331",
+      "bytes": 3471
+    },
+    {
+      "file": "dev/commercial_bank_finance_dev.csv",
+      "sha256": "07f6800aa763caa79ab3cb6539d9f62c6c67081d6978f1102a578a274fe94963",
+      "bytes": 3600
+    },
+    {
+      "file": "dev/corporate_finance_dev.csv",
+      "sha256": "8496110652a98806b78c2dd8e29758ad2bfedaa4f866e8ffe64f7f5220782e48",
+      "bytes": 2614
+    },
+    {
+      "file": "dev/corporate_strategy_and_risk_management_dev.csv",
+      "sha256": "a4add93564c40c48c2de6bc25f7f3a2eee970583f92e42447ba4169e78138185",
+      "bytes": 3749
+    },
+    {
+      "file": "dev/cost_accounting_dev.csv",
+      "sha256": "ce29b9975440df0d1366caa8cc07b9ddac95d6f25e3198c06fd3149265d4f0bc",
+      "bytes": 3405
+    },
+    {
+      "file": "dev/econometrics_dev.csv",
+      "sha256": "beeab93dafd26459fadc3477718cfeebdccf8252ee32a9cc08f1f598ff663690",
+      "bytes": 3719
+    },
+    {
+      "file": "dev/economic_law_dev.csv",
+      "sha256": "1210b257ee797492d2343dfe4828c824935e8d93d4fe137fef954446990ea862",
+      "bytes": 3120
+    },
+    {
+      "file": "dev/finance_dev.csv",
+      "sha256": "c510a14aefa989061dcc83ff89c05605c27437a89d84e6296a2fcced6c270810",
+      "bytes": 2292
+    },
+    {
+      "file": "dev/financial_engineering_dev.csv",
+      "sha256": "eaeaf0d5a30329c1912c27df2de9dfdf5c3359578b117e5dcf42b1b600231d42",
+      "bytes": 3262
+    },
+    {
+      "file": "dev/financial_management_dev.csv",
+      "sha256": "b270d4304f4e8cdbe4c5aa3d577bbc0400f8c4a5fd523bc18b3f048a08f005a5",
+      "bytes": 2986
+    },
+    {
+      "file": "dev/financial_markets_dev.csv",
+      "sha256": "769375a5f4e75ef9757d98389b966686b0ae8eb1671d758a0fe3436596c3cca9",
+      "bytes": 2676
+    },
+    {
+      "file": "dev/fund_qualification_certificate_dev.csv",
+      "sha256": "b6c8283ee5e1c80da55fba040cc9db924af92f355361de0729100d96a87a2928",
+      "bytes": 1698
+    },
+    {
+      "file": "dev/futures_practitioner_qualification_certificate_dev.csv",
+      "sha256": "86ecf2b45fdaff29520a15e533d38cb2613a0877642bd551e796591433b923dc",
+      "bytes": 2852
+    },
+    {
+      "file": "dev/insurance_dev.csv",
+      "sha256": "ccebbf24507304b7fa646cacfbfbd4d267e2cf3bbf0b759676427a5d81d3860d",
+      "bytes": 2738
+    },
+    {
+      "file": "dev/intermediate_financial_accounting_dev.csv",
+      "sha256": "25ce0a45d8f6eeea559c553a992cfb3f489efce07f71b82d28126075d584ae81",
+      "bytes": 3448
+    },
+    {
+      "file": "dev/international_economics_dev.csv",
+      "sha256": "decfa97e1b92ba4187e8e6b790022d0978de2081585b01903e1858337f4e2b34",
+      "bytes": 4648
+    },
+    {
+      "file": "dev/international_finance_dev.csv",
+      "sha256": "2e316d69862084149695ed8cf21bdecb3a3dd4bb936016e028855c801d25fda4",
+      "bytes": 2964
+    },
+    {
+      "file": "dev/investments_dev.csv",
+      "sha256": "51ffbfb7d47293b6923c37cf7eda551cca4eb854927ca42e63a61d046f14d6f7",
+      "bytes": 2712
+    },
+    {
+      "file": "dev/macroeconomics_dev.csv",
+      "sha256": "46327fc873caf22b67a28bfd10b06c0b73b3ea53e71b0572795a6ed4bae937e2",
+      "bytes": 4404
+    },
+    {
+      "file": "dev/management_accounting_dev.csv",
+      "sha256": "74daa8ee425cc87ce19dfd1f7d27187b3e5c7665c52447cfa1b833a14000f47a",
+      "bytes": 3751
+    },
+    {
+      "file": "dev/microeconomics_dev.csv",
+      "sha256": "67d92edae04d02d1eecab2ba7e007e3ce9a0001e60989cf7f80ff5fc7c585e26",
+      "bytes": 2997
+    },
+    {
+      "file": "dev/monetary_finance_dev.csv",
+      "sha256": "87c5945aca82033835db466de0e16bcb62f550e072f44fd964da2a7bd3db9a1f",
+      "bytes": 2687
+    },
+    {
+      "file": "dev/political_economy_dev.csv",
+      "sha256": "78122c20691a9c5b5cd94a2272fc60046c8ff68d984f46cefd0f8718dbae9236",
+      "bytes": 3525
+    },
+    {
+      "file": "dev/public_finance_dev.csv",
+      "sha256": "dbfee0357aff77bc22bdd5e86eb6b07b8a0c1a534a3636ad1770c0a68cfcd185",
+      "bytes": 2461
+    },
+    {
+      "file": "dev/securities_practitioner_qualification_certificate_dev.csv",
+      "sha256": "9881848e4fb4fcc49b8b3a9be8ec8f54dba5e73e64d34e2253df45e0aac64019",
+      "bytes": 2434
+    },
+    {
+      "file": "dev/statistics_dev.csv",
+      "sha256": "0ae231512e21046dd1e59087899d6c087caa280c63830c05c1ea1fb03cdbdb37",
+      "bytes": 2120
+    },
+    {
+      "file": "dev/tax_law_dev.csv",
+      "sha256": "4b80f21161cf54dc9b7711f7d2e57ed4890f547d3bddad954fd028bf5b7e28ac",
+      "bytes": 3176
+    },
+    {
+      "file": "val/tax_law_val.csv",
+      "sha256": "d7660069a08752f5a6b74381980d484b16f9d8917c5aa044b8836b72439d685f",
+      "bytes": 13771
+    },
+    {
+      "file": "val/statistics_val.csv",
+      "sha256": "32be8b77019a87b6a08e7564860571073a15f3f56ac786bf4d523450a84151bc",
+      "bytes": 8406
+    },
+    {
+      "file": "val/securities_practitioner_qualification_certificate_val.csv",
+      "sha256": "6100aeb31da0d89b4ab33f66650ec633339c09a06ace1022e5bf213e146b901a",
+      "bytes": 8305
+    },
+    {
+      "file": "val/public_finance_val.csv",
+      "sha256": "1767115bab6033e38989aef6ccc22f0384611c91790dcce1cd2f5a352176d82f",
+      "bytes": 9470
+    },
+    {
+      "file": "val/political_economy_val.csv",
+      "sha256": "433305daf16ad7dc19362ef9967a0a6db68fc5bfe6cab639689df2926fc49eba",
+      "bytes": 7331
+    },
+    {
+      "file": "val/monetary_finance_val.csv",
+      "sha256": "eabeaf90c254f7263958fe483dad44f0b8c0c05e0b05d31bba505ae2cea3e6b5",
+      "bytes": 6719
+    },
+    {
+      "file": "val/microeconomics_val.csv",
+      "sha256": "22344542e0d3d0e8a8e6d67f830a3e74bc6375b74cf781cb934c730e85abe148",
+      "bytes": 9798
+    },
+    {
+      "file": "val/management_accounting_val.csv",
+      "sha256": "3b426fd04bd0764dbfe823b13e344101544be03346b857f1fac2fa9f407ad331",
+      "bytes": 6637
+    },
+    {
+      "file": "val/macroeconomics_val.csv",
+      "sha256": "90d53ec56f1dcf46b6a67b3337569d0b8d85a838b7bc3f6c57124adf723edcfb",
+      "bytes": 5936
+    },
+    {
+      "file": "val/investments_val.csv",
+      "sha256": "56e6d402dde0a3f2f5710d139b9a85e1d0130265e0b955eefe4d2c02844ebef3",
+      "bytes": 8255
+    },
+    {
+      "file": "val/international_finance_val.csv",
+      "sha256": "4acadffbe2815dd041c9e69ec2dacc45e151dbcc53fb62b37d1cd9d16a704afb",
+      "bytes": 3193
+    },
+    {
+      "file": "val/international_economics_val.csv",
+      "sha256": "82c5bd645689c7c10440691ceffcc87cf166685aa98010536c5802ef89f3e91a",
+      "bytes": 5397
+    },
+    {
+      "file": "val/intermediate_financial_accounting_val.csv",
+      "sha256": "ac262e4af702795da1765305bad91897aef9f87f0da688f3093bd505e5bcba53",
+      "bytes": 11151
+    },
+    {
+      "file": "val/insurance_val.csv",
+      "sha256": "4afe84840a6cba3a6730954ee3eb25a0a463e1ee5878ec716a8268814ca09a9b",
+      "bytes": 6639
+    },
+    {
+      "file": "val/futures_practitioner_qualification_certificate_val.csv",
+      "sha256": "6d6a724e9cd2c60db7b0ba10f1c5b563d900d7a775f99327c2cf983b356e2c37",
+      "bytes": 9431
+    },
+    {
+      "file": "val/fund_qualification_certificate_val.csv",
+      "sha256": "541e33e073715e8a4e3367d41158b71aae8893ef0f655ff7594d808a41a7b47b",
+      "bytes": 14979
+    },
+    {
+      "file": "val/financial_markets_val.csv",
+      "sha256": "bbac6a4da24d20949dbc3878a3fc7118d305e2397bc9bef8077a6ebec2fc627e",
+      "bytes": 9871
+    },
+    {
+      "file": "val/financial_management_val.csv",
+      "sha256": "c8cc840a93a8a9f4c865cf885ac5844c8bdcc5db6804e9d624e80fac5205236e",
+      "bytes": 7279
+    },
+    {
+      "file": "val/financial_engineering_val.csv",
+      "sha256": "374a32c3c319222f15f33636d5d6549a79ae119193c6ab6e4b069c07312f0912",
+      "bytes": 5768
+    },
+    {
+      "file": "val/finance_val.csv",
+      "sha256": "6a17126507d69c4709a8de076fe8d2d8977a4b570a246d9211bd82ab0ecaa664",
+      "bytes": 5348
+    },
+    {
+      "file": "val/economic_law_val.csv",
+      "sha256": "29257282d59ac9f1923e434c08eae1bd2bc66a8983decc3769bb1777271ed34a",
+      "bytes": 7651
+    },
+    {
+      "file": "val/econometrics_val.csv",
+      "sha256": "82013d088db6e6ff3d743d60834e454ec8cd280f618719d29794d20574880023",
+      "bytes": 5826
+    },
+    {
+      "file": "val/cost_accounting_val.csv",
+      "sha256": "1e9064f5794254a518814f1a7da14256f07e419bdd234ec830e43bbee2ee43dc",
+      "bytes": 7524
+    },
+    {
+      "file": "val/corporate_strategy_and_risk_management_val.csv",
+      "sha256": "c23e823bfa170b937bcd81955715fb3d5fc5335b20a062808040b8cddf13065d",
+      "bytes": 13987
+    },
+    {
+      "file": "val/corporate_finance_val.csv",
+      "sha256": "e554e9cd56d53c03982cc8ba1759988f9a2b01b9fe71d8ac0dec9c9d562f85b3",
+      "bytes": 7499
+    },
+    {
+      "file": "val/commercial_bank_finance_val.csv",
+      "sha256": "326756dcb698620e4831caaef2fb49adc31efa4c0bfe7d3f05afa76da133a8bd",
+      "bytes": 3600
+    },
+    {
+      "file": "val/china_actuary_val.csv",
+      "sha256": "6b56611c64aaf6caaca5019dfe98ba2f08e9cdd28d02be3828e4ecd7f491206b",
+      "bytes": 10065
+    },
+    {
+      "file": "val/certified_practising_accountant_val.csv",
+      "sha256": "7ad60c397fbbca65875fe4bde2b7cf5b05989259bc62a7d1c4098f2a087c47ce",
+      "bytes": 11257
+    },
+    {
+      "file": "val/certified_management_accountant_val.csv",
+      "sha256": "8fe6a3478829908fc34cc99bc089ad30da7c2fa75f9eea3b64f4f8485f69181e",
+      "bytes": 5642
+    },
+    {
+      "file": "val/accounting_val.csv",
+      "sha256": "b95acbcf5c8ab8ccab4effddd67794ad074dceee6a59d94562526eae5a7f3773",
+      "bytes": 20268
+    },
+    {
+      "file": "val/advanced_financial_accounting_val.csv",
+      "sha256": "c562a88c47eefe0fc4869b6b4ef1df67650cf1924a66ca154c3f6581f2691dbf",
+      "bytes": 4507
+    },
+    {
+      "file": "val/auditing_val.csv",
+      "sha256": "3f65916cf4897be6ddea31f4a087e5afc9a5f3535c7fccefe4d4d655026217ad",
+      "bytes": 15247
+    },
+    {
+      "file": "val/banking_practitioner_qualification_certificate_val.csv",
+      "sha256": "445dc98aa2b6d1bb66c83fbd3b5523b162c5e5870dabc1a5704cb11cb0f3cf84",
+      "bytes": 32356
+    },
+    {
+      "file": "val/central_banking_val.csv",
+      "sha256": "90e755809bf1d7807809b5e0b9c198dd6fa2e1d4f87d5a5745ca7cf8e8dd4838",
+      "bytes": 5310
+    },
+    {
+      "file": "test/financial_markets_test.csv",
+      "sha256": "ec6656349733df064cdd87d4764a6214c30cb8747b7e6c37ef4e93bdc60a3ef7",
+      "bytes": 24841
+    },
+    {
+      "file": "test/tax_law_test.csv",
+      "sha256": "29d094b848ee041f5ed6c2ff5c09518a56bf2c243de88bbd3c3c91714c848370",
+      "bytes": 30713
+    },
+    {
+      "file": "test/statistics_test.csv",
+      "sha256": "18846768d661fb48bc532c75c11b9cc00f7a7fd66bbd7c604939a315a00078ea",
+      "bytes": 24599
+    },
+    {
+      "file": "test/securities_practitioner_qualification_certificate_test.csv",
+      "sha256": "8a00eb32e84370ca50f89afdbc7e9b82a84d00b21c9cac13d2a5e3bd42447094",
+      "bytes": 19519
+    },
+    {
+      "file": "test/public_finance_test.csv",
+      "sha256": "8ef249d197499a9501713cfe3f1b7b0bdc6f76cc9baf5669cc2f9e490086cd92",
+      "bytes": 14573
+    },
+    {
+      "file": "test/political_economy_test.csv",
+      "sha256": "d1f04085daa7f5fc8f14fb76d5ad2563ecdd13273a925b33bce53ce3ab635750",
+      "bytes": 22403
+    },
+    {
+      "file": "test/monetary_finance_test.csv",
+      "sha256": "cc6ed68740de56aad9960a454828495789976b4fd1ddafa241f442a798a7252e",
+      "bytes": 19417
+    },
+    {
+      "file": "test/microeconomics_test.csv",
+      "sha256": "ee4f83a0012f85056bdd93def1c9e62173e79080c021fc2358b1111d404b064a",
+      "bytes": 20881
+    },
+    {
+      "file": "test/management_accounting_test.csv",
+      "sha256": "1e62951eeb6f3118cd2b87405e16f41856173af01ea47889e12b5773d5335d27",
+      "bytes": 12429
+    },
+    {
+      "file": "test/macroeconomics_test.csv",
+      "sha256": "a7df7a193ebcb094962fb1cf8b18faff7d22e1594a597d400d74749b9d68945d",
+      "bytes": 21685
+    },
+    {
+      "file": "test/investments_test.csv",
+      "sha256": "9274e84c5f4d76a333dc1f3eaa892d406795a0b153f6fcde494a033c89f6efea",
+      "bytes": 29199
+    },
+    {
+      "file": "test/international_finance_test.csv",
+      "sha256": "ac11afa8de8a17135902cf66453aa20e908aba8d86c0ebdaa51df577e470a53a",
+      "bytes": 13755
+    },
+    {
+      "file": "test/international_economics_test.csv",
+      "sha256": "5b419b5c1139436928358655dcb7fd44ef6d03948d46654e6544392d2334796b",
+      "bytes": 26171
+    },
+    {
+      "file": "test/intermediate_financial_accounting_test.csv",
+      "sha256": "c8106eff786df675caa66dcf70799a444d3aea800f7a1a2a61d5bfa25d4effc5",
+      "bytes": 28513
+    },
+    {
+      "file": "test/insurance_test.csv",
+      "sha256": "afc7703a8aa71ae5fb806e87a0151bf4e48c6705aa2edd5b08a786589d915c90",
+      "bytes": 17783
+    },
+    {
+      "file": "test/futures_practitioner_qualification_certificate_test.csv",
+      "sha256": "a9ac346120369ba099a118c9e1ffa0a3df02d50a6b6faf23af8ee0acf71e0227",
+      "bytes": 24169
+    },
+    {
+      "file": "test/fund_qualification_certificate_test.csv",
+      "sha256": "df60927a75877d7f3f812d19c93bebd2530967790aba51f9c9ce9ef1d15b4808",
+      "bytes": 41332
+    },
+    {
+      "file": "test/accounting_test.csv",
+      "sha256": "5c4c069bd5fd46113273836c58972a86b25050cda9824a55afb98a2bd656e375",
+      "bytes": 41519
+    },
+    {
+      "file": "test/financial_management_test.csv",
+      "sha256": "14436720641da5463244ccc5c4d83248502ad4a448d65172387e479bbc7cfefe",
+      "bytes": 31684
+    },
+    {
+      "file": "test/financial_engineering_test.csv",
+      "sha256": "670bd3774951550f320f0435bdcfa1502a30dd14e91a1efb7c3ab3bb5344b841",
+      "bytes": 17777
+    },
+    {
+      "file": "test/finance_test.csv",
+      "sha256": "dc0deb9f8459ffaf98017e4ef3bcc0868bf71a1401b397fab41904c8fc53de9e",
+      "bytes": 22522
+    },
+    {
+      "file": "test/economic_law_test.csv",
+      "sha256": "31b8ed90517be0a50a8f8629fb11d9885b64bff7a313e96d7fe9cf5f73027b31",
+      "bytes": 27195
+    },
+    {
+      "file": "test/econometrics_test.csv",
+      "sha256": "c2ef4c25fe133b2e985139c1d7d4c8acb66cf2ab722d0c13b4747a0bec805a01",
+      "bytes": 16141
+    },
+    {
+      "file": "test/cost_accounting_test.csv",
+      "sha256": "950fd4ee365c4d301890953cd7c680253487f144cb860ab4b8c6fa78ed0e4b59",
+      "bytes": 25478
+    },
+    {
+      "file": "test/corporate_strategy_and_risk_management_test.csv",
+      "sha256": "3ca9e3c0e6f760e82b030ffd29e05f69f26b4d741995a2c4844a758ca689d16e",
+      "bytes": 38800
+    },
+    {
+      "file": "test/corporate_finance_test.csv",
+      "sha256": "21facbc2743d2da7849f559af12b074a44abd1eede42ebbad3db0f6170dc143d",
+      "bytes": 17976
+    },
+    {
+      "file": "test/commercial_bank_finance_test.csv",
+      "sha256": "33af8959bbe9488317b8367466ce1a8e108b0f360dbdd5d682d55d279448e298",
+      "bytes": 13671
+    },
+    {
+      "file": "test/china_actuary_test.csv",
+      "sha256": "450eb52873846b61afce0fdf98f11962fb595c66f5a06235828fdef14305c222",
+      "bytes": 27224
+    },
+    {
+      "file": "test/certified_practising_accountant_test.csv",
+      "sha256": "695c568e5360f87749862ca3690385d38ff208c8afcfdbf9fc281fadcc086476",
+      "bytes": 45052
+    },
+    {
+      "file": "test/certified_management_accountant_test.csv",
+      "sha256": "e141fc7988554134c7f24a391bfad73977051bbd69aaa3c96a91826d0c98c042",
+      "bytes": 32173
+    },
+    {
+      "file": "test/central_banking_test.csv",
+      "sha256": "e55fd4f720c0a24508408de2085550730e024ab64ccd4d628c3d0242310318b2",
+      "bytes": 15681
+    },
+    {
+      "file": "test/banking_practitioner_qualification_certificate_test.csv",
+      "sha256": "13ad291c34eac85c77d5b49ade9e9fad71ec32bbae38bd91cd6f949afe1b990d",
+      "bytes": 71840
+    },
+    {
+      "file": "test/auditing_test.csv",
+      "sha256": "b1eac1c387567ca1c24e6c7b86ed89109df3afe95fefdfa686d579486dbb4536",
+      "bytes": 43275
+    },
+    {
+      "file": "test/advanced_financial_accounting_test.csv",
+      "sha256": "04a0fb4311c667db2f7fa278cf8650fff1d93862145919749da1953ad23c67f7",
+      "bytes": 14617
+    }
+  ]
+}

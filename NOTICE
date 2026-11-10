@@ -1,0 +1,14 @@
+FinSec — Financial Agent Capability Enhancement and Safety Evaluation
+Copyright 2026 FinSec contributors.
+
+Project source code is licensed under the Apache License, Version 2.0.
+
+This project integrates HarmBench and adapts its interfaces for local quantized
+models, native chat templates and distributed evaluation. HarmBench is copyright
+2024 Center for AI Safety and is distributed under the MIT license. Its license
+is reproduced in LICENSES/HarmBench-MIT.txt. Official attack implementations are
+fetched separately at the pinned revision; their notices remain applicable.
+
+Pi orchestration uses @mariozechner/pi-agent-core and @mariozechner/pi-ai through
+their published npm packages. Other dependencies and model/data assets retain
+their respective licenses and are not relicensed by this repository.

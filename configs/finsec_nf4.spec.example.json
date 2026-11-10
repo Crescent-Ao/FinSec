@@ -1,0 +1,6 @@
+{
+  "path": "models/Qwen3.5-9B",
+  "adapter": "models/FinSec",
+  "precision": "nf4",
+  "system_prompt": ""
+}

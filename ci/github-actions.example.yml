@@ -1,0 +1,22 @@
+name: source-and-protocol-tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  cpu:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: pi_crypto_agent/package-lock.json
+      - run: python -m pip install -r requirements.cpu.txt
+      - run: npm ci --prefix pi_crypto_agent --ignore-scripts
+      - run: python3 verify.py
+      - run: python -m unittest tests.test_public_smoke tests.test_stage2_reward_serialization tests.test_privacy_exposure tests.test_harmbench_comparison tests.test_hardening_selection -v
+      - run: node --test pi_crypto_agent/agent_described.test.mjs pi_crypto_agent/agent_native.test.mjs

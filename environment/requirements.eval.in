@@ -1,0 +1,4 @@
+# Install in additive .venv-eval, leaving the verified training .venv unchanged.
+spacy>=3.8,<3.9
+datasketch>=1.6,<2
+# Install the matching tokenizer package separately: python -m spacy download en_core_web_sm

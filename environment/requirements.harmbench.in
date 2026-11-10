@@ -1,0 +1,17 @@
+# Independent environment. Do not install over the pinned financial-training .venv.
+vllm @ https://github.com/vllm-project/vllm/releases/download/v0.21.0/vllm-0.21.0%2Bcu129-cp38-abi3-manylinux_2_34_x86_64.whl#sha256=920777691e340df7a8328adfb1e57b9996dbb537edfb654dd32f70844f5f423d
+torch==2.11.0
+bitsandbytes==0.50.2
+transformers==5.19.0
+fschat==0.2.36
+ray
+google-generativeai
+datasketch==1.10.0
+spacy==3.8.18
+peft
+pandas
+pyyaml
+sentencepiece==0.2.1
+# Qwen3.5 gated delta attention forward/backward Triton kernels.
+flash-linear-attention==0.6.0
+fla-core==0.6.0

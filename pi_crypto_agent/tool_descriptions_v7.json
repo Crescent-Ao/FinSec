@@ -1,0 +1,13 @@
+{
+  "read_source": "读取最初提交的源码及原始行号，返回file和source_with_lines。参数为空。优先用于确认最终证据位置；与可修改工作区区分，最终finding引用这里的原始源码。",
+  "static_scan": "对最初源码执行静态候选扫描，返回candidates(rule_id,file,line,evidence)。参数为空。适用于初筛，可能漏报或误报，必须由你结合用途核对；不是已确认漏洞，也不执行代码。",
+  "search_code": "在最初源码中进行大小写不敏感的字面检索。query必填，1至100字符；例如{\"query\":\"encrypt\"}。返回matches的file/line/text，最多50项；不是正则或跨仓库检索。",
+  "lookup_rules": "查询本地密码学审计规则。rule_ids可选，如{\"rule_ids\":[\"AES_ECB\"]}，空对象查询全部。返回rules的id/cwe/rule；规则不等于当前源码存在漏洞。",
+  "workspace_info": "获取当前案例独立工作区的位置、文件与限制。参数为空。先确认工作区映射，再操作文件。工作区只有当前案例公开源码，不含其他项目、模型或密钥。",
+  "list_files": "列出本案例可读写工作区的相对文件路径，返回files。参数为空。原始文件无论外部文件名如何，都映射为audited_source.py；不要猜测原文件名已存在。",
+  "read_file": "读取本案例工作区文件，path是必填相对路径，如{\"path\":\"audited_source.py\"}。返回path/content。文件上限128KiB。读取当前版本，若此前修改过则不是原始版本；不允许绝对路径或目录逃逸。",
+  "write_file": "在本案例工作区创建或覆盖文件。path和content必填，例如{\"path\":\"test_audit.py\",\"content\":\"import audited_source\\nprint(dir(audited_source))\"}。返回path/bytes/written。内容上限64KiB；仅写文件不会执行，接着调用run_command执行测试。",
+  "replace_text": "修改工作区已有文件。path/old/new必填；old必须在文件中恰好出现一次，否则返回错误。用于修正测试或候选补丁，返回replacements/written。修改后应执行验证；最终源码证据仍引用原始版本。",
+  "run_command": "在本案例持久工作区执行真实Shell命令，command必填，如{\"command\":\"python3.11 test_audit.py\"}。可检查文件和运行已写测试；返回exit_code/stdout/stderr/timed_out/seconds。Python可用Crypto和cryptography等已安装依赖；无网络和宿主文件访问，不可安装缺失依赖。墙钟30秒、CPU10秒、内存768MiB，输出最多16KiB。非零退出要读取stderr再修正；exit0只证明该次命令成功。不要把Java/JS源码当Python导入。",
+  "run_python_test": "直接执行Python断言测试，无需先write_file。test_code必填，最多16KiB；通过import audited_source导入本例原始源码，调用其真实函数验证行为，不要重写一份算法冒充原函数测试。candidate_code可选，仅验证候选修复时传入，最多64KiB；省略时测试原始源码。只支持原始文件为.py，其他语言返回unsupported_language。返回status/exit_code/test_passed/stdout/stderr/source_kind和哈希。10秒墙钟、5秒CPU、512MiB；测试临时文件不与run_command工作区互通。查看真实输出后再下结论，不把依赖错误当漏洞。"
+}

@@ -1,0 +1,9 @@
+{
+  "upstream": "https://github.com/centerforaisafety/HarmBench",
+  "revision": "8e1604d1171fe8a48d8febecd22f600e462bdcdd",
+  "bundle": "HarmBench.bundle",
+  "source_tree_complete": true,
+  "shallow_boundaries": [
+    "8e1604d1171fe8a48d8febecd22f600e462bdcdd"
+  ]
+}

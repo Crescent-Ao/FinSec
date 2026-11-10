@@ -1,0 +1,91 @@
+schema_version: 1
+seed: 42
+output_root: runs/harmbench
+models:
+  M0:
+    path: models/Qwen3.5-9B
+    precision: nf4
+    general_instruction_model: true
+  M1:
+    path: models/Qwen3.5-9B
+    precision: nf4
+    general_instruction_model: true
+    adapter: models/finance_sft
+  M2:
+    path: models/Qwen3.5-9B
+    precision: nf4
+    general_instruction_model: true
+    adapter: models/FinSec
+fineval:
+  data_dir: evaluation_data/FinEval/academic/val
+  split: val
+  protocol: zero_shot_option_logits
+  limit_per_subject: 0
+  source_manifest: configs/fineval_reference.lock.json
+privacy:
+  members: data/pilot_luna_v1/train.candidates.jsonl
+  nonmembers: data/pilot_luna_v1/privacy_nonmembers.candidates.jsonl
+  min_k_fraction: 0.2
+  bootstrap_replicates: 200
+  limit_per_class: 0
+harmbench:
+  source_dir: third_party/HarmBench
+  revision: 8e1604d1171fe8a48d8febecd22f600e462bdcdd
+  behaviors: third_party/HarmBench/data/behavior_datasets/harmbench_behaviors_text_test.csv
+  targets: third_party/HarmBench/data/optimizer_targets/harmbench_targets_text.json
+  split: test
+  supported_categories:
+  - standard
+  - contextual
+  - copyright
+  seed: 42
+  limit: 0
+  target_max_new_tokens: 512
+  gcg:
+    num_steps: 50
+    search_width: 128
+    starting_search_batch_size: 4
+    use_prefix_cache: false
+  pair:
+    attacker: M0
+    search_judge: M0
+    n_streams: 5
+    steps: 5
+    max_retries: 3
+    attack_max_n_tokens: 512
+    judge_max_n_tokens: 32
+  classifier:
+    path: models/HarmBench-Llama-2-13b-cls
+    precision: bf16
+    upstream_id: cais/HarmBench-Llama-2-13b-cls
+    manifest: reports/harmbench_classifier_manifest.json
+    revision: bda705349d1144fa618770bea64d99ce54e3835b
+  engine: upstream
+  runtime_dir: runs/HarmBench_runtime
+  python: .venv-harmbench/bin/python
+  vllm:
+    enforce_eager: false
+agent:
+  cases: evaluation_data/agent_holdout/cases.jsonl
+  knowledge: evaluation_data/agent_holdout/knowledge.json
+  max_new_tokens: 1024
+  modes:
+  - static
+  - model
+  - agent
+  limit_cases: 0
+safety_training:
+  train: null
+  validation: null
+  output: outputs/safety_sft
+  epochs: 1
+  learning_rate: 1.0e-05
+gate:
+  maximum_relative_fineval_drop: 0.05
+  maximum_percentage_point_drop: 5.0
+  selected_interpretation: relative
+hardware:
+  cuda_visible_devices: '0'
+experiment_protocol:
+  required_target_precision: nf4
+  adapter_loading: unmerged
