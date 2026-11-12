@@ -15,7 +15,10 @@ def main():
     for path in markdown:
         for target in re.findall(r'\]\(([^)]+)\)', path.read_text()):
             if '://' not in target and not target.startswith(('#', 'mailto:')):
-                assert (path.parent / target.split('#')[0]).exists(), (path.name, target)
+                relative = target.split('#')[0]
+                assert not Path(relative).is_absolute(), (path.name, 'absolute local link', target)
+                actual = (path.parent / relative).resolve()
+                assert ROOT in actual.parents and actual.exists(), (path.name, target)
     data = json.loads((ROOT / 'docs/results/metrics.json').read_text())
     english = (ROOT / 'README.en.md').read_text()
     def percent(value):
