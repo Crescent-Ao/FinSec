@@ -1,5 +1,7 @@
 # FinSec
 
+[![CI](https://github.com/Crescent-Ao/FinSec/actions/workflows/ci.yml/badge.svg)](https://github.com/Crescent-Ao/FinSec/actions/workflows/ci.yml) · [v0.1.0](https://github.com/Crescent-Ao/FinSec/releases/tag/v0.1.0)
+
 **Financial Agent Capability Enhancement and Safety Validation**
 
 [中文](README.md) · [Method](docs/METHOD.md) · [Reproduction](docs/REPRODUCE.md) · [Agent demonstrations](docs/DEMO.md) · [Results](docs/RESULTS.md) · [ModelScope project artifact](https://modelscope.cn/models/aiops11/Qwen3.5-9B-FinSec)
@@ -57,6 +59,8 @@ node --test pi_crypto_agent/agent_described.test.mjs pi_crypto_agent/agent_nativ
 ```
 
 Actual Python/Bash tool execution also requires Linux Bubblewrap. GPU environments and optional HarmBench dependencies are documented in [environment/README.md](environment/README.md).
+
+GitHub Actions runs the CPU/protocol tests, public-release checks and documentation validation on pushes and pull requests.
 
 ## Plan, run and collect experiments
 

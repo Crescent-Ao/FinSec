@@ -1,5 +1,7 @@
 # FinSec
 
+[![CI](https://github.com/Crescent-Ao/FinSec/actions/workflows/ci.yml/badge.svg)](https://github.com/Crescent-Ao/FinSec/actions/workflows/ci.yml) · [v0.1.0](https://github.com/Crescent-Ao/FinSec/releases/tag/v0.1.0)
+
 **面向金融应用的智能体能力增强与安全验证**
 
 [English](README.en.md) · [方法框架](docs/METHOD.md) · [五阶段复现](docs/REPRODUCE.md) · [Agent真实案例](docs/DEMO.md) · [实验结果](docs/RESULTS.md) · [ModelScope阶段成果](https://modelscope.cn/models/aiops11/Qwen3.5-9B-FinSec)
@@ -91,7 +93,7 @@ python -m unittest tests.test_public_smoke tests.test_stage2_reward_serializatio
 node --test pi_crypto_agent/agent_described.test.mjs
 ```
 
-`ci/github-actions.example.yml`提供可启用的GitHub Actions配置模板。完整测试集还会检查可选训练依赖与官方HarmBench集成；核心CPU协议测试不需要模型权重。
+GitHub Actions已启用CPU、协议和公开文档检查，配置见[ci.yml](.github/workflows/ci.yml)。`ci/github-actions.example.yml`保留可复用模板。完整测试集还会检查可选训练依赖与官方HarmBench集成；核心CPU协议测试不需要模型权重。
 
 真实Python/Bash工具执行需要Linux Bubblewrap，并可运行：
 
