@@ -66,10 +66,10 @@ def main():
     run.add_argument('--models', nargs='+', default=['M0','M1','M2'])
     run.add_argument('--tasks', nargs='+', choices=['fineval','privacy','agent'], default=['fineval','privacy','agent'])
     attack = sub.add_parser('attack')
-    attack.add_argument('--model', choices=['M0','M1','M2'], required=True)
+    attack.add_argument('--model', required=True, help='A model key registered in the configuration')
     attack.add_argument('--method', choices=['GCG','PAIR'], required=True)
     judge = sub.add_parser('judge')
-    judge.add_argument('--model', choices=['M0','M1','M2'], required=True)
+    judge.add_argument('--model', required=True, help='A model key registered in the configuration')
     judge.add_argument('--method', choices=['GCG','PAIR'], required=True)
     sub.add_parser('report')
     sub.add_parser('plan')
@@ -80,6 +80,8 @@ def main():
     safety.add_argument('--execute', action='store_true', help='Without this flag, write the reviewed training plan only')
     args = parser.parse_args()
     cfg = load_config(resolve(args.config))
+    if args.command in ('attack','judge') and args.model not in cfg['models']:
+        parser.error('Target model is not registered in the configuration')
     if cfg['harmbench']['pair'].get('provider')=='deepseek' and (
             args.command=='suite' or args.command in ('attack','judge') and args.method=='PAIR'):
         parser.error('DeepSeek PAIR uses the paired campaign to enforce the shared CNY25 limit. '

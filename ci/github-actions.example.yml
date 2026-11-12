@@ -18,5 +18,6 @@ jobs:
       - run: python -m pip install -r requirements.cpu.txt
       - run: npm ci --prefix pi_crypto_agent --ignore-scripts
       - run: python3 verify.py
-      - run: python -m unittest tests.test_public_smoke tests.test_stage2_reward_serialization tests.test_privacy_exposure tests.test_harmbench_comparison tests.test_hardening_selection -v
+      - run: python scripts/check_docs.py
+      - run: python -m unittest tests.test_public_smoke tests.test_experiment_suite tests.test_stage2_reward_serialization tests.test_privacy_exposure tests.test_harmbench_comparison tests.test_hardening_selection -v
       - run: node --test pi_crypto_agent/agent_described.test.mjs pi_crypto_agent/agent_native.test.mjs

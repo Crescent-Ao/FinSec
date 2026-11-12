@@ -12,7 +12,7 @@ const code=fs.readFileSync(opts.file,'utf8');if(Buffer.byteLength(code)>65536)th
 fs.mkdirSync(opts.output,{recursive:true});
 const spec={path:opts['model-dir'],precision:'nf4',system_prompt:''};if(opts.adapter)spec.adapter=opts.adapter;
 const specPath=path.join(opts.output,'spec.json');fs.writeFileSync(specPath,JSON.stringify(spec,null,2));
-const knowledge=JSON.parse(fs.readFileSync(path.join(root,'evaluation_data/agent_holdout/knowledge.json'),'utf8'));
+const knowledge=JSON.parse(fs.readFileSync(opts.knowledge ?? path.join(root,'knowledge/crypto_rules.json'),'utf8'));
 const publicCase={id:'live-'+Date.now(),file:path.basename(opts.file),code,knowledge};
 const worker=spawn(opts.python,['-u',path.join(root,'pi_crypto_agent/native_worker_described_4096.py'),'--spec',specPath],
   {cwd:root,stdio:['pipe','pipe','inherit'],env:{...process.env,HF_HUB_OFFLINE:'1',TOKENIZERS_PARALLELISM:'false',OMP_NUM_THREADS:'4'}});

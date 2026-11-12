@@ -11,6 +11,8 @@ models:
     precision: nf4
     general_instruction_model: true
     adapter: models/finance_sft
+    training_manifest: data/stage1/exposure_manifest.json
+    training_state: outputs/finance_sft/trainer_state.json
   M2:
     path: models/Qwen3.5-9B
     precision: nf4
@@ -23,8 +25,8 @@ fineval:
   limit_per_subject: 0
   source_manifest: configs/fineval_reference.lock.json
 privacy:
-  members: data/pilot_luna_v1/train.candidates.jsonl
-  nonmembers: data/pilot_luna_v1/privacy_nonmembers.candidates.jsonl
+  members: data/privacy/members.jsonl
+  nonmembers: data/privacy/nonmembers.jsonl
   min_k_fraction: 0.2
   bootstrap_replicates: 200
   limit_per_class: 0
@@ -67,7 +69,7 @@ harmbench:
     enforce_eager: false
 agent:
   cases: evaluation_data/agent_holdout/cases.jsonl
-  knowledge: evaluation_data/agent_holdout/knowledge.json
+  knowledge: knowledge/crypto_rules.json
   max_new_tokens: 1024
   modes:
   - static

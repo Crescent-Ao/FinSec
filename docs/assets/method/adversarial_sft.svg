@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="936" viewBox="0 0 1560 936" role="img" aria-labelledby="title desc">
+<title id="title">DPO后的离线对抗增强SFT：真实攻击难例、安全改写与能力回放</title><desc id="desc">借鉴HarmBench R2D2以攻击难例和普通任务共同训练的思路，在DPO后离线混合训练。GCG和PAIR共104个独立训练攻击案例重复8次，加入331条教师安全改写及768条能力回放，形成1931条曝光记录。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8.5" refY="5" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1 1 9 5 1 9Z" fill="#005BAC"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="8.5" refY="5" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1 1 9 5 1 9Z" fill="#7561AC"/></marker></defs>
+<rect width="1560" height="936" fill="white"/><g font-family="Noto Sans CJK SC,Noto Sans CJK JP,Microsoft YaHei,sans-serif">
+<text x="18" y="32" font-size="24" fill="#153B5B" font-weight="700" text-anchor="start" >(a) 构造真实攻击难例，并补全安全回答</text>
+<rect x="18" y="52" width="1524" height="285" rx="8" fill="#F6F9FC" stroke="#BDD2E3" stroke-width="1.5" />
+<rect x="38" y="83" width="233" height="215" rx="7" fill="white" stroke="#C0D4E3" stroke-width="1.1" />
+<g transform="translate(124 103) scale(1.3125)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4h20l8 8v32H11Z"/><path d="M31 4v9h8M17 22h16m-16 7h16m-16 7h11"/></g>
+<text x="155" y="196" font-size="25" fill="#005BAC" font-weight="700" text-anchor="middle" >独立训练种子</text>
+<text x="155" y="240" font-size="20" fill="#627E96" font-weight="400" text-anchor="middle" >覆盖攻击薄弱模式</text>
+<text x="155" y="276" font-size="18.5" fill="#627E96" font-weight="400" text-anchor="middle" >与正式评测分开管理</text>
+<path d="M277 192H307V122H340" fill="none" stroke="#005BAC" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M307 192V263H340" fill="none" stroke="#005BAC" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="354" y="83" width="369" height="92" rx="6" fill="#FFF6F0" stroke="#DEC4B1" stroke-width="1.2" />
+<text x="370" y="115" font-size="24" fill="#AB6B49" font-weight="700" text-anchor="start" >GCG 训练攻击</text>
+<text x="370" y="152" font-size="20" fill="#153B5B" font-weight="500" text-anchor="start" >梯度驱动的后缀搜索</text>
+<text x="704" y="115" font-size="17" fill="#627E96" font-weight="400" text-anchor="end" >72 个独立案例</text>
+<path d="M730 129H770" fill="none" stroke="#005BAC" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="354" y="221" width="369" height="92" rx="6" fill="#FFF6F0" stroke="#DEC4B1" stroke-width="1.2" />
+<text x="370" y="253" font-size="24" fill="#AB6B49" font-weight="700" text-anchor="start" >PAIR 训练攻击</text>
+<text x="370" y="290" font-size="20" fill="#153B5B" font-weight="500" text-anchor="start" >语义改写与多轮诱导</text>
+<text x="704" y="253" font-size="17" fill="#627E96" font-weight="400" text-anchor="end" >32 个独立案例</text>
+<path d="M730 267H770" fill="none" stroke="#005BAC" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M770 129V267" fill="none" stroke="#005BAC" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M770 195H814" fill="none" stroke="#005BAC" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="830" y="84" width="331" height="220" rx="7" fill="white" stroke="#BAD1E2" stroke-width="1.1" />
+<rect x="847" y="104" width="297" height="50" rx="5" fill="#FFF7F1" stroke="#DFC4B0" stroke-width="1" />
+<text x="995" y="137" font-size="21" fill="#AB6B49" font-weight="600" text-anchor="middle" >攻击请求 / 对抗上下文</text>
+<path d="M995 161V184" fill="none" stroke="#005BAC" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="847" y="197" width="297" height="77" rx="5" fill="#EAF3FC" stroke="#ABC8DE" stroke-width="1.1" />
+<g transform="translate(862 216) scale(0.7708333333333334)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m24 4 17 7v12c0 10-7 16-17 21C14 39 7 33 7 23V11Z"/><path d="m15 23 6 6 13-14"/></g>
+<text x="1015" y="231" font-size="24" fill="#005BAC" font-weight="700" text-anchor="middle" >安全回答</text>
+<text x="1015" y="260" font-size="17.5" fill="#627E96" font-weight="400" text-anchor="middle" >处理风险并保留合法帮助</text>
+<path d="M1169 195H1211" fill="none" stroke="#005BAC" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="1250" y="102" width="56" height="69" rx="4" fill="white" stroke="#BACDDD" stroke-width="1.1" />
+<rect x="1245" y="98" width="56" height="69" rx="4" fill="white" stroke="#BACDDD" stroke-width="1.1" />
+<rect x="1240" y="94" width="56" height="69" rx="4" fill="white" stroke="#BACDDD" stroke-width="1.1" />
+<rect x="1249" y="104" width="38" height="8" rx="1" fill="#CB865E" stroke="none" stroke-width="0" />
+<path d="M1249 124h38" fill="none" stroke="#A2BACE" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1249 135h33" fill="none" stroke="#A2BACE" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1249 146h28" fill="none" stroke="#A2BACE" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1400" y="130" font-size="24" fill="#153B5B" font-weight="700" text-anchor="middle" >104 个独立难例</text>
+<text x="1400" y="174" font-size="23" fill="#005BAC" font-weight="600" text-anchor="middle" >各重复 8 次</text>
+<text x="1367" y="232" font-size="23" fill="#153B5B" font-weight="600" text-anchor="middle" >832 条训练曝光记录</text>
+<text x="1367" y="275" font-size="23" fill="#AB6B49" font-weight="600" text-anchor="middle" >149,336 Token</text>
+<text x="18" y="382" font-size="24" fill="#153B5B" font-weight="700" text-anchor="start" >(b) 三类监督信号混合，低学习率更新 LoRA</text>
+<rect x="18" y="403" width="1524" height="352" rx="8" fill="#F6F9FC" stroke="#BDD2E3" stroke-width="1.5" />
+<rect x="38" y="427" width="345" height="147" rx="6" fill="white" stroke="#BCD2E2" stroke-width="1.1" />
+<g transform="translate(52 441) scale(0.7708333333333334)" stroke="#CB865E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4h20l8 8v32H11Z"/><path d="M31 4v9h8M17 22h16m-16 7h16m-16 7h11"/></g>
+<text x="104" y="466" font-size="22" fill="#CB865E" font-weight="700" text-anchor="start" >真实训练攻击难例</text>
+<text x="56" y="507" font-size="22" fill="#153B5B" font-weight="600" text-anchor="start" >（149,336 Token）</text>
+<text x="56" y="547" font-size="22" fill="#627E96" font-weight="400" text-anchor="start" >832 条</text>
+<path d="M210 582V608" fill="none" stroke="#005BAC" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="412" y="427" width="345" height="147" rx="6" fill="white" stroke="#BCD2E2" stroke-width="1.1" />
+<g transform="translate(426 441) scale(0.7708333333333334)" stroke="#4A92C2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m24 4 17 7v12c0 10-7 16-17 21C14 39 7 33 7 23V11Z"/><path d="m15 23 6 6 13-14"/></g>
+<text x="478" y="466" font-size="22" fill="#4A92C2" font-weight="700" text-anchor="start" >教师安全改写</text>
+<text x="430" y="507" font-size="22" fill="#153B5B" font-weight="600" text-anchor="start" >（61,586 Token）</text>
+<text x="430" y="547" font-size="22" fill="#627E96" font-weight="400" text-anchor="start" >331 条</text>
+<path d="M584 582V608" fill="none" stroke="#005BAC" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="786" y="427" width="345" height="147" rx="6" fill="white" stroke="#BCD2E2" stroke-width="1.1" />
+<g transform="translate(800 441) scale(0.7708333333333334)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M39 20A16 16 0 0 0 10 12l-5 7m0-11v11h11m-7 9a16 16 0 0 0 29 8l5-7m0 11V29H32"/></g>
+<text x="852" y="466" font-size="22" fill="#005BAC" font-weight="700" text-anchor="start" >能力回放</text>
+<text x="804" y="507" font-size="22" fill="#153B5B" font-weight="600" text-anchor="start" >（235,139 Token）</text>
+<text x="804" y="547" font-size="22" fill="#627E96" font-weight="400" text-anchor="start" >768 条</text>
+<path d="M958 582V608" fill="none" stroke="#005BAC" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M210 608H958" fill="none" stroke="#005BAC" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M586 608V631" fill="none" stroke="#005BAC" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="38" y="644" width="1093" height="80" rx="6" fill="white" stroke="#B5CEE1" stroke-width="1.1" />
+<text x="584" y="676" font-size="22" fill="#153B5B" font-weight="600" text-anchor="middle" >按实际样本混合及重复次数形成训练权重</text>
+<text x="584" y="707" font-size="21" fill="#005BAC" font-weight="600" text-anchor="middle" >交叉熵监督：真实难例安全回答 + 教师改写 + 回放任务</text>
+<path d="M1138 684H1183" fill="none" stroke="#005BAC" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<circle cx="1337.5" cy="497.5" r="58.099999999999994" fill="#EAF3FC" stroke="none" stroke-width="1.5"/>
+<g transform="translate(1296 456) scale(1.7291666666666667)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="4"/><circle cx="9" cy="35" r="4"/><circle cx="25" cy="8" r="4"/><circle cx="25" cy="24" r="4"/><circle cx="25" cy="40" r="4"/><circle cx="41" cy="16" r="4"/><circle cx="41" cy="33" r="4"/><path d="m13 12 8-4m-8 4 8 12m-8 11 8-11m-8 11 8 5m8-32 8 8m-8 8 8-8m-8 8 8 9m-8 7 8-7"/></g>
+<g transform="translate(1358.25 510.78) scale(0.6916666666666668)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m24 4 17 7v12c0 10-7 16-17 21C14 39 7 33 7 23V11Z"/><path d="m15 23 6 6 13-14"/></g>
+<text x="1352" y="600" font-size="26" fill="#005BAC" font-weight="700" text-anchor="middle" >低学习率 SFT</text>
+<text x="1352" y="646" font-size="21" fill="#153B5B" font-weight="600" text-anchor="middle" >更新策略侧 LoRA</text>
+<text x="1352" y="686" font-size="19.5" fill="#627E96" font-weight="400" text-anchor="middle" >LR 1e−6 · 有效 batch 48</text>
+<text x="1352" y="728" font-size="19.5" fill="#627E96" font-weight="400" text-anchor="middle" >1,931 条 · 446,061 Token</text>
+<rect x="18" y="780" width="368" height="55" rx="6" fill="#EAF3FC" stroke="#A9C7DE" stroke-width="1.3" />
+<text x="202.0" y="816" font-size="23" fill="#005BAC" font-weight="700" text-anchor="middle" >偏好优化模型</text>
+<path d="M393 808H452" fill="none" stroke="#005BAC" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="466" y="780" width="396" height="55" rx="6" fill="#EAF3FC" stroke="#A9C7DE" stroke-width="1.3" />
+<text x="664.0" y="816" font-size="23" fill="#005BAC" font-weight="700" text-anchor="middle" >FinSec模型</text>
+<path d="M869 808H926" fill="none" stroke="#005BAC" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="940" y="780" width="602" height="55" rx="6" fill="#EAF3FC" stroke="#A9C7DE" stroke-width="1.3" />
+<text x="1241" y="815" font-size="24" fill="#005BAC" font-weight="600" text-anchor="middle" >FinEval / GCG / PAIR / MIA / Pi-Agent</text>
+<text x="19" y="875" font-size="19.5" fill="#627E96" font-weight="400" text-anchor="start" >范式来源：借鉴 HarmBench / R2D2 的攻击驱动训练与任务回放思想；本项目在 DPO 后离线构造难例并进行 SFT。</text>
+<text x="19" y="913" font-size="20" fill="#005BAC" font-weight="600" text-anchor="start" >真实攻击难例（149,336 Token）+ 教师安全改写（61,586 Token）+ 能力回放（235,139 Token）</text>
+</g></svg>

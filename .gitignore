@@ -41,3 +41,5 @@ __pycache__/
 *.lock.tmp
 .DS_Store
 demo/generated.html
+configs/*.local.json
+configs/*.local.yaml

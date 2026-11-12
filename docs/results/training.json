@@ -1,0 +1,32 @@
+{
+  "scope": "Canonical serialized training data tokens per one epoch, including repeated training rows. Not device-padded execution or API usage.",
+  "stages": {
+    "original_safety_sft": {
+      "rows": 5728,
+      "canonical_full_sequence_tokens": 1871933,
+      "maximum_length": 4057
+    },
+    "original_safety_sft_long": {
+      "rows": 34,
+      "canonical_full_sequence_tokens": 191639,
+      "maximum_length": 12704
+    },
+    "supplemental_safety_sft41": {
+      "rows": 1931,
+      "canonical_full_sequence_tokens": 446061,
+      "maximum_length": 2274
+    },
+    "dpo557": {
+      "preference_pairs": 8907,
+      "chosen_full_tokens": 2197813,
+      "rejected_full_tokens": 1597486,
+      "canonical_both_branches_tokens": 3795299,
+      "prompt_tokens_once": 1300289
+    },
+    "finance_sft": {
+      "rows": 547247,
+      "canonical_full_sequence_tokens": 296760476,
+      "epochs": 1
+    }
+  }
+}

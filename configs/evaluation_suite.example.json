@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "pipeline_config": "configs/harmbench_gcg.example.yaml",
+  "model_dir": "models/Qwen3.5-9B",
+  "output_root": "runs/comparison",
+  "gpus": "0",
+  "tasks": ["fineval"],
+  "stages": [
+    {"id": "M0", "label": "基础NF4模型", "adapter": null},
+    {"id": "M1", "label": "金融SFT模型", "adapter": "models/finance_sft"},
+    {"id": "safety_tools", "label": "安全与工具模型", "adapter": "models/safety_tools"},
+    {"id": "dpo", "label": "DPO偏好优化模型", "adapter": "models/dpo"},
+    {"id": "FinSec", "label": "FinSec模型", "adapter": "models/FinSec"}
+  ]
+}

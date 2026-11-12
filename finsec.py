@@ -82,8 +82,13 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='action',required=True)
     verify=sub.add_parser('verify');verify.add_argument('--bundle-root',type=Path)
     sub.add_parser('doctor');sub.add_parser('setup-harmbench');sub.add_parser('download-base');sub.add_parser('fetch-fineval')
-    ev=sub.add_parser('eval-fineval');ev.add_argument('--model-dir',required=True);ev.add_argument('--variant',choices=['base','finance','FinSec'],default='FinSec')
+    ev=sub.add_parser('eval-fineval');ev.add_argument('--model-dir',required=True);ev.add_argument('--variant',choices=['base','finance','safety_tools','dpo','FinSec'],default='FinSec')
+    ev.add_argument('--adapter',help='Override the adapter path for any non-base stage')
     ev.add_argument('--output',default='runs/fineval');ev.add_argument('--limit-per-subject',type=int,default=0);ev.add_argument('--gpus',default='0')
+    suite=sub.add_parser('eval-suite',help='Plan, execute or collect a five-stage comparison')
+    suite.add_argument('--config',default='configs/evaluation_suite.example.json')
+    suite.add_argument('--tasks',nargs='+',choices=['fineval','privacy','agent','gcg','pair'])
+    mode=suite.add_mutually_exclusive_group();mode.add_argument('--execute',action='store_true');mode.add_argument('--collect',action='store_true')
     demo=sub.add_parser('demo');demo.add_argument('--port',type=int,default=8765)
     t=sub.add_parser('train-plan');t.add_argument('--stage',choices=['finance_demo','safety_tools','safety_long','dpo','finsec'],required=True)
     t.add_argument('--model-dir',required=True);t.add_argument('--parent');t.add_argument('--data');t.add_argument('--validation-data');t.add_argument('--output',default='runs/train_plan')
@@ -94,10 +99,15 @@ def main():
     a.add_argument('--node',default='node');a.add_argument('--output',default='runs/live_agent');a.add_argument('--gpus',default='0')
     a.add_argument('--max-turns',type=int,default=12)
     args=p.parse_args()
+    if args.action=='eval-fineval' and args.variant=='base' and args.adapter:
+        p.error('The base variant must not load an adapter')
     if args.action=='verify':
         from verify import verify_release
         verify_release(args.bundle_root)
     elif args.action=='doctor':doctor()
+    elif args.action=='eval-suite':
+        from scripts.experiment_suite import run
+        run(args)
     elif args.action=='setup-harmbench':setup_harmbench()
     elif args.action=='download-base':subprocess.run([sys.executable,str(ROOT/'scripts/download_model.py')],cwd=ROOT,check=True)
     elif args.action=='fetch-fineval':
@@ -114,7 +124,9 @@ def main():
         from fineval_pipeline.core import Backend,model_identity
         from fineval_pipeline.finance import evaluate
         spec={'path':str(Path(args.model_dir).resolve()),'precision':'nf4','system_prompt':''}
-        if args.variant!='base':spec['adapter']=str(ROOT/'models'/('finance_sft' if args.variant=='finance' else 'FinSec'))
+        if args.variant!='base':
+            folder={'finance':'finance_sft','safety_tools':'safety_tools','dpo':'dpo','FinSec':'FinSec'}[args.variant]
+            spec['adapter']=str(Path(args.adapter).resolve()) if args.adapter else str(ROOT/'models'/folder)
         import torch
         torch.manual_seed(42)
         identity=model_identity(spec);backend=Backend(spec)

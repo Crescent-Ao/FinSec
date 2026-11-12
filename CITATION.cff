@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use FinSec, please cite this source release and the upstream methods listed in docs/REFERENCES.md."
+title: "FinSec: Financial Agent Capability Enhancement and Safety Validation"
+type: software
+authors:
+  - name: "FinSec Team 1123"
+version: 0.1.0
+date-released: 2026-11-12
+url: "https://github.com/Crescent-Ao/FinSec"
+repository-code: "https://github.com/Crescent-Ao/FinSec"
+license: Apache-2.0
+keywords:
+  - financial-language-models
+  - post-training
+  - model-safety
+  - membership-inference
+  - cryptographic-code-auditing

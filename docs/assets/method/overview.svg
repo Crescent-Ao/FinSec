@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="978" viewBox="0 0 1600 978" role="img" aria-labelledby="title desc">
+<title id="title">数据蒸馏、多阶段后训练与Pi-Agent接入</title>
+<desc id="desc">紧凑论文插图。公开数据和多教师蒸馏经过校验形成不同监督数据。金融知识SFT、安全与工具SFT、DPO与离线对抗增强构成主线；GRPO为DPO后的独立探索分支。最终模型通过底部薄层接入Pi-Agent。</desc>
+<defs>
+<marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1 1 8 4.5 1 8Z" fill="#005BAC"/></marker>
+<marker id="arrow-purple" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1 1 8 4.5 1 8Z" fill="#7561AC"/></marker>
+</defs><g font-family="Noto Sans CJK SC,Noto Sans CJK JP,Microsoft YaHei,sans-serif">
+<rect width="1600" height="978" fill="white"/>
+
+<g id="data-distillation">
+<rect x="12" y="12" width="1576" height="240" rx="7" fill="white" stroke="#BDCFDF" stroke-width="1.4" />
+<text x="30" y="42" font-size="23" fill="#153B5B" font-weight="700" text-anchor="start" >(a) 数据构建与蒸馏</text>
+<rect x="30" y="78" width="350" height="61" rx="6" fill="#F7FAFD" stroke="#C7D8E7" stroke-width="1.2" />
+<text x="42" y="103" font-size="18" fill="#005BAC" font-weight="600" text-anchor="start" >公开论文数据</text>
+<text x="43" y="124" font-size="16" fill="#627E96" font-weight="400" text-anchor="start" >fin-glaive / fin-cfa-graphgen</text>
+<rect x="30" y="158" width="350" height="70" rx="6" fill="#F7FAFD" stroke="#C7D8E7" stroke-width="1.2" />
+<text x="42" y="183" font-size="18" fill="#005BAC" font-weight="600" text-anchor="start" >多教师蒸馏</text>
+<text x="43" y="211" font-size="17" fill="#627E96" font-weight="400" text-anchor="start" >GPT/Luna · Gemini · DeepSeek</text>
+<path d="M381 108H396V63H829V86" fill="none" stroke="#005BAC" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<rect x="540" y="52" width="238" height="22" rx="2" fill="white" stroke="white" stroke-width="0" />
+<text x="659" y="68" font-size="14" fill="#627E96" font-weight="400" text-anchor="middle" >公开数据直接筛选</text>
+<path d="M381 192H398V148H409" fill="none" stroke="#005BAC" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="414" y="92" width="150" height="115" rx="6" fill="#F7FAFD" stroke="#C7D8E7" stroke-width="1.2" />
+<g transform="translate(472 102) scale(0.7083333333333334)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4h20l8 8v32H11Z"/><path d="M31 4v9h8M17 22h16m-16 7h16m-16 7h11"/></g>
+<text x="489" y="161" font-size="19" fill="#005BAC" font-weight="700" text-anchor="middle" >任务设计</text>
+<text x="489" y="187" font-size="14.5" fill="#627E96" font-weight="400" text-anchor="middle" >场景 / 格式</text>
+<path d="M567 150H580" fill="none" stroke="#005BAC" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="584" y="92" width="150" height="115" rx="6" fill="#F7FAFD" stroke="#C7D8E7" stroke-width="1.2" />
+<g transform="translate(642 102) scale(0.7083333333333334)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="12" width="32" height="27" rx="9"/><path d="M24 12V5m-4 0h8M3 23h5m32 0h5m-28 9h14"/><circle cx="18" cy="23" r="2"/><circle cx="30" cy="23" r="2"/></g>
+<text x="659" y="161" font-size="19" fill="#005BAC" font-weight="700" text-anchor="middle" >教师生成</text>
+<text x="659" y="187" font-size="14.5" fill="#627E96" font-weight="400" text-anchor="middle" >生成 / 导入</text>
+<path d="M737 150H750" fill="none" stroke="#005BAC" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="754" y="92" width="150" height="115" rx="6" fill="#F7FAFD" stroke="#C7D8E7" stroke-width="1.2" />
+<g transform="translate(812 102) scale(0.7083333333333334)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="19"/><path d="m13 24 8 8 15-17"/></g>
+<text x="829" y="161" font-size="19" fill="#005BAC" font-weight="700" text-anchor="middle" >复核校验</text>
+<text x="829" y="187" font-size="14.5" fill="#627E96" font-weight="400" text-anchor="middle" >答案 / 数值 / 代码</text>
+<path d="M907 150H920" fill="none" stroke="#005BAC" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="924" y="92" width="150" height="115" rx="6" fill="#F7FAFD" stroke="#C7D8E7" stroke-width="1.2" />
+<g transform="translate(982 102) scale(0.7083333333333334)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h38L29 24v15l-10 5V24Z"/></g>
+<text x="999" y="161" font-size="19" fill="#005BAC" font-weight="700" text-anchor="middle" >去重划分</text>
+<text x="999" y="187" font-size="14.5" fill="#627E96" font-weight="400" text-anchor="middle" >问题家族 / 留出</text>
+<path d="M1078 150H1110" fill="none" stroke="#005BAC" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="1120" y="69" width="216" height="49" rx="5" fill="#F4F8FD" stroke="#C7D8E7" stroke-width="1" />
+<text x="1131" y="90" font-size="17" fill="#153B5B" font-weight="600" text-anchor="start" >金融知识SFT</text>
+<text x="1131" y="110" font-size="14.5" fill="#627E96" font-weight="400" text-anchor="start" >547,247 条</text>
+<rect x="1355" y="69" width="216" height="49" rx="5" fill="#F4F8FD" stroke="#C7D8E7" stroke-width="1" />
+<text x="1366" y="90" font-size="17" fill="#153B5B" font-weight="600" text-anchor="start" >安全SFT</text>
+<text x="1366" y="110" font-size="14.5" fill="#627E96" font-weight="400" text-anchor="start" >4,784 条</text>
+<rect x="1120" y="124" width="216" height="49" rx="5" fill="#F4F8FD" stroke="#C7D8E7" stroke-width="1" />
+<text x="1131" y="145" font-size="17" fill="#153B5B" font-weight="600" text-anchor="start" >工具SFT</text>
+<text x="1131" y="165" font-size="14.5" fill="#627E96" font-weight="400" text-anchor="start" >978 条</text>
+<rect x="1355" y="124" width="216" height="49" rx="5" fill="#F4F8FD" stroke="#C7D8E7" stroke-width="1" />
+<text x="1366" y="145" font-size="17" fill="#153B5B" font-weight="600" text-anchor="start" >DPO偏好对</text>
+<text x="1366" y="165" font-size="14.5" fill="#627E96" font-weight="400" text-anchor="start" >8,907 对</text>
+<rect x="1120" y="179" width="216" height="49" rx="5" fill="#F4F8FD" stroke="#C7D8E7" stroke-width="1" />
+<text x="1131" y="200" font-size="17" fill="#153B5B" font-weight="600" text-anchor="start" >可验证审计任务</text>
+<text x="1131" y="220" font-size="14.5" fill="#627E96" font-weight="400" text-anchor="start" >1,302 个</text>
+<rect x="1355" y="179" width="216" height="49" rx="5" fill="#F4F8FD" stroke="#C7D8E7" stroke-width="1" />
+<text x="1366" y="200" font-size="17" fill="#153B5B" font-weight="600" text-anchor="start" >对抗训练集</text>
+<text x="1366" y="220" font-size="14.5" fill="#627E96" font-weight="400" text-anchor="start" >1,931 条（含重复曝光）</text>
+<text x="414" y="234" font-size="16" fill="#627E96" font-weight="400" text-anchor="start" >指令与回答 / 工具轨迹 / 偏好对 / 私有验证标签</text>
+</g>
+<path d="M800 255V271" fill="none" stroke="#005BAC" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g id="post-training">
+<rect x="12" y="278" width="1576" height="580" rx="7" fill="white" stroke="#BDCFDF" stroke-width="1.4" />
+<text x="30" y="308" font-size="23" fill="#153B5B" font-weight="700" text-anchor="start" >(b) 多阶段后训练</text>
+<text x="300" y="308" font-size="17" fill="#627E96" font-weight="400" text-anchor="start" >通用Qwen3.5-9B · NF4 + LoRA</text>
+<g id="layered-sft">
+<rect x="30" y="336" width="430" height="303" rx="7" fill="#F8FAFD" stroke="#BFD2E2" stroke-width="1.3" />
+<text x="48" y="367" font-size="21" fill="#005BAC" font-weight="700" text-anchor="start" >① 分层SFT：建立专业与工具能力</text>
+<rect x="50" y="385" width="390" height="36" rx="5" fill="white" stroke="#C7D8E7" stroke-width="1" />
+<g transform="translate(63 390) scale(0.5208333333333334)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="4"/><circle cx="9" cy="35" r="4"/><circle cx="25" cy="8" r="4"/><circle cx="25" cy="24" r="4"/><circle cx="25" cy="40" r="4"/><circle cx="41" cy="16" r="4"/><circle cx="41" cy="33" r="4"/><path d="m13 12 8-4m-8 4 8 12m-8 11 8-11m-8 11 8 5m8-32 8 8m-8 8 8-8m-8 8 8 9m-8 7 8-7"/></g>
+<text x="98" y="409" font-size="18" fill="#153B5B" font-weight="600" text-anchor="start" >通用基础模型</text>
+<path d="M245 423V436" fill="none" stroke="#005BAC" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="50" y="442" width="390" height="83" rx="5" fill="white" stroke="#C7D8E7" stroke-width="1" />
+<g transform="translate(64 454) scale(0.6041666666666666)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h14c4 0 6 2 6 5v29c0-4-4-6-8-6H4Zm40 0H30c-4 0-6 2-6 5v29c0-4 4-6 8-6h12Z"/><path d="M10 14h8m-8 7h8m12-7h8m-8 7h8"/></g>
+<text x="104" y="476" font-size="20" fill="#005BAC" font-weight="700" text-anchor="start" >金融知识SFT</text>
+<text x="65" y="508" font-size="17" fill="#153B5B" font-weight="400" text-anchor="start" >金融问题 → 推理 / 公式 → 参考答案</text>
+<path d="M245 527V540" fill="none" stroke="#005BAC" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="50" y="545" width="390" height="76" rx="5" fill="white" stroke="#C7D8E7" stroke-width="1" />
+<text x="65" y="571" font-size="20" fill="#005BAC" font-weight="700" text-anchor="start" >安全与工具SFT</text>
+<g transform="translate(65 583) scale(0.5)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m24 4 17 7v12c0 10-7 16-17 21C14 39 7 33 7 23V11Z"/><path d="m15 23 6 6 13-14"/></g>
+<text x="98" y="603" font-size="16" fill="#153B5B" font-weight="400" text-anchor="start" >风险识别与安全回答</text>
+<g transform="translate(265 583) scale(0.5)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="40" height="33" rx="5"/><path d="m12 17 7 6-7 6m13 1h11M16 44h16"/></g>
+<text x="297" y="603" font-size="16" fill="#153B5B" font-weight="400" text-anchor="start" >工具调用</text>
+</g>
+<path d="M465 592H493" fill="none" stroke="#005BAC" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g id="safety-preference-dpo" aria-label="同一请求下，偏好守住安全边界并提供帮助的回答，降低越界泄露与错误拒绝的相对偏好">
+<rect x="500" y="336" width="480" height="303" rx="7" fill="#F8FAFD" stroke="#BFD2E2" stroke-width="1.3" />
+<text x="519" y="367" font-size="22" fill="#005BAC" font-weight="700" text-anchor="start" >② DPO安全偏好</text>
+<rect x="651" y="385" width="178" height="42" rx="10" fill="white" stroke="#B9CDDE" stroke-width="1.2" />
+<circle cx="671" cy="399" r="5.3" fill="none" stroke="#627E96" stroke-width="1.4"/>
+<path d="M661 415c0-11 20-11 20 0" fill="none" stroke="#627E96" stroke-width="1.4"/>
+<text x="697" y="414" font-size="20" fill="#153B5B" font-weight="500" text-anchor="start" >同一请求</text>
+<path d="M740 429V438H625V447" fill="none" stroke="#005BAC" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M740 438H855V447" fill="none" stroke="#005BAC" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="520" y="452" width="210" height="108" rx="10" fill="#EAF3FC" stroke="#8BB4D4" stroke-width="1.3" />
+<path d="M619 452l6-8 6 8" fill="#EAF3FC" stroke="#8BB4D4" stroke-width="1.3"/>
+<rect x="750" y="452" width="210" height="108" rx="10" fill="#FFF6F0" stroke="#DFC1B1" stroke-width="1.3" />
+<path d="M849 452l6-8 6 8" fill="#FFF6F0" stroke="#DFC1B1" stroke-width="1.3"/>
+<path d="M547 465h27l10 10v38h-37Z" fill="white" stroke="#005BAC" stroke-width="1.8"/>
+<path d="M574 465v10h10" fill="none" stroke="#005BAC" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="554" y="484" width="23" height="4" rx="1" fill="#005BAC" stroke="#005BAC" stroke-width="0" />
+<rect x="554" y="493" width="23" height="4" rx="1" fill="#005BAC" stroke="#005BAC" stroke-width="0" />
+<rect x="554" y="502" width="17" height="4" rx="1" fill="#005BAC" stroke="#005BAC" stroke-width="0" />
+<g transform="translate(572 487) scale(0.6458333333333334)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m24 4 17 7v12c0 10-7 16-17 21C14 39 7 33 7 23V11Z"/><path d="m15 23 6 6 13-14"/></g>
+<path d="M651 465h27l10 10v38h-37Z" fill="white" stroke="#005BAC" stroke-width="1.8"/>
+<path d="M678 465v10h10" fill="none" stroke="#005BAC" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M658 484h23M658 493h23M658 502h17" fill="none" stroke="#005BAC" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="688" cy="509" r="12" fill="white" stroke="#005BAC" stroke-width="1.8"/>
+<path d="M681 509l5 5 9-11" fill="none" stroke="#005BAC" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="571" y="547" font-size="14" fill="#005BAC" font-weight="600" text-anchor="middle" >守住边界</text>
+<text x="680" y="547" font-size="14" fill="#005BAC" font-weight="600" text-anchor="middle" >正常帮助</text>
+<path d="M777 465h27l10 10v38h-37Z" fill="white" stroke="#AA7052" stroke-width="1.8"/>
+<path d="M804 465v10h10" fill="none" stroke="#AA7052" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M784 484h23M784 493h23M784 502h17" fill="none" stroke="#AA7052" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M799 487h33m-7-7 7 7-7 7" fill="none" stroke="#AA7052" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M881 465h27l10 10v38h-37Z" fill="white" stroke="#AA7052" stroke-width="1.8"/>
+<path d="M908 465v10h10" fill="none" stroke="#AA7052" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M888 484h23M888 493h23M888 502h17" fill="none" stroke="#AA7052" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="916" cy="506" r="15" fill="#FFF6F0" stroke="#AA7052" stroke-width="2.1"/>
+<path d="M905 495l22 22" fill="none" stroke="#AA7052" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="798" y="547" font-size="14" fill="#AA7052" font-weight="600" text-anchor="middle" >越界</text>
+<text x="909" y="547" font-size="14" fill="#AA7052" font-weight="600" text-anchor="middle" >误拒</text>
+<text x="625" y="581" font-size="15" fill="#005BAC" font-weight="700" text-anchor="middle" >Chosen ↑</text>
+<text x="855" y="581" font-size="15" fill="#AA7052" font-weight="600" text-anchor="middle" >Rejected ↓</text>
+<rect x="546" y="588" width="158" height="8" rx="4" fill="#D8E7F4" stroke="#D8E7F4" stroke-width="0" />
+<rect x="546" y="588" width="132" height="8" rx="4" fill="#3F88BB" stroke="#3F88BB" stroke-width="0" />
+<rect x="776" y="588" width="158" height="8" rx="4" fill="#F1E2D8" stroke="#F1E2D8" stroke-width="0" />
+<rect x="776" y="588" width="43" height="8" rx="4" fill="#C79579" stroke="#C79579" stroke-width="0" />
+<path d="M625 600V615H718" fill="none" stroke="#005BAC" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M855 600V615H780" fill="none" stroke="#005BAC" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<circle cx="740" cy="615" r="20" fill="#EAF3FC" stroke="none" stroke-width="1.5"/>
+<g transform="translate(726 601) scale(0.5833333333333334)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="4"/><circle cx="9" cy="35" r="4"/><circle cx="25" cy="8" r="4"/><circle cx="25" cy="24" r="4"/><circle cx="25" cy="40" r="4"/><circle cx="41" cy="16" r="4"/><circle cx="41" cy="33" r="4"/><path d="m13 12 8-4m-8 4 8 12m-8 11 8-11m-8 11 8 5m8-32 8 8m-8 8 8-8m-8 8 8 9m-8 7 8-7"/></g>
+<g transform="translate(755 610) scale(0.375)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m24 4 17 7v12c0 10-7 16-17 21C14 39 7 33 7 23V11Z"/><path d="m15 23 6 6 13-14"/></g>
+</g>
+<path d="M985 592H1013" fill="none" stroke="#005BAC" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g id="adversarial-sft" aria-label="攻击请求与安全回答组成训练对，混合回放后监督更新模型">
+<rect x="1020" y="336" width="550" height="303" rx="7" fill="#F8FAFD" stroke="#BFD2E2" stroke-width="1.3" />
+<text x="1038" y="367" font-size="21" fill="#005BAC" font-weight="700" text-anchor="start" >③ 对抗增强SFT</text>
+<text x="1039" y="401" font-size="16" fill="#005BAC" font-weight="600" text-anchor="start" >配对监督样本</text>
+<text x="1475" y="401" font-size="16" fill="#005BAC" font-weight="600" text-anchor="middle" >能力回放</text>
+<rect x="1046" y="425" width="153" height="88" rx="5" fill="#FFF8F2" stroke="#E6BCA5" stroke-width="1" />
+<rect x="1040" y="419" width="153" height="88" rx="5" fill="#FFF5EE" stroke="#D9A58D" stroke-width="1.3" />
+<path d="M1053 430l8 15h-16Z" fill="none" stroke="#BC6D4A" stroke-width="1.5"/>
+<text x="1119" y="444" font-size="16" fill="#A55B3D" font-weight="700" text-anchor="middle" >攻击请求</text>
+<rect x="1051" y="455" width="131" height="21" rx="3" fill="#FCE4D6" stroke="#FCE4D6" stroke-width="0" />
+<text x="1116" y="470" font-size="13.5" fill="#A55B3D" font-weight="500" text-anchor="middle" >请求 + … ! # …</text>
+<path d="M1054 490h54m8 0h15m7 0h37" fill="none" stroke="#D3A88F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="1213" y="419" width="173" height="88" rx="9" fill="#EAF3FC" stroke="#8BB4D4" stroke-width="1.3" />
+<path d="M1213 443l-9 6 9 6" fill="#EAF3FC" stroke="#8BB4D4" stroke-width="1.3"/>
+<text x="1299.5" y="444" font-size="16" fill="#005BAC" font-weight="700" text-anchor="middle" >✓ 安全回答</text>
+<g transform="translate(1231 457) scale(0.6458333333333334)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m24 4 17 7v12c0 10-7 16-17 21C14 39 7 33 7 23V11Z"/><path d="m15 23 6 6 13-14"/></g>
+<path d="M1271 466h92M1271 478h92M1271 490h65" fill="none" stroke="#8CB3D2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1117 512V526H1300V512" fill="none" stroke="#005BAC" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1208 526V541H1180V550" fill="none" stroke="#005BAC" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="1402" y="466" font-size="24" fill="#627E96" font-weight="500" text-anchor="middle" >+</text>
+<rect x="1432" y="430" width="112" height="78" rx="4" fill="#EDF2F7" stroke="#BFCFDC" stroke-width="1" />
+<rect x="1426" y="424" width="112" height="78" rx="4" fill="#F5F8FB" stroke="#BFCFDC" stroke-width="1" />
+<rect x="1420" y="418" width="112" height="78" rx="4" fill="white" stroke="#AFC6DA" stroke-width="1.2" />
+<g transform="translate(1430 428) scale(0.5)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4h20l8 8v32H11Z"/><path d="M31 4v9h8M17 22h16m-16 7h16m-16 7h11"/></g>
+<path d="M1464 438h50M1464 446h36" fill="none" stroke="#9FB8CC" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1432 459H1517M1432 466H1500" fill="none" stroke="#9FB8CC" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1433 481h75M1433 488h49" fill="none" stroke="#9FB8CC" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1476 512V541H1180" fill="none" stroke="#005BAC" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1054 552V599H1306V552" fill="none" stroke="#8FAEC6" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="1074" y="562" width="59" height="34" rx="3" fill="white" stroke="#C4D5E2" stroke-width="1" />
+<rect x="1070" y="558" width="59" height="34" rx="3" fill="white" stroke="#AFC6DA" stroke-width="1" />
+<rect x="1075" y="564" width="49" height="8" rx="2" fill="#F6CDB6" stroke="#F6CDB6" stroke-width="0" />
+<path d="M1076 580H1118M1076 586H1108" fill="none" stroke="#9CB6CA" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="1144" y="557" width="59" height="34" rx="3" fill="white" stroke="#C4D5E2" stroke-width="1" />
+<rect x="1140" y="553" width="59" height="34" rx="3" fill="white" stroke="#AFC6DA" stroke-width="1" />
+<rect x="1145" y="559" width="49" height="8" rx="2" fill="#B8D4EC" stroke="#B8D4EC" stroke-width="0" />
+<path d="M1146 575H1188M1146 581H1178" fill="none" stroke="#9CB6CA" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="1214" y="562" width="59" height="34" rx="3" fill="white" stroke="#C4D5E2" stroke-width="1" />
+<rect x="1210" y="558" width="59" height="34" rx="3" fill="white" stroke="#AFC6DA" stroke-width="1" />
+<rect x="1215" y="564" width="49" height="8" rx="2" fill="#C8D7E2" stroke="#C8D7E2" stroke-width="0" />
+<path d="M1216 580H1258M1216 586H1248" fill="none" stroke="#9CB6CA" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1180" y="622" font-size="16" fill="#005BAC" font-weight="600" text-anchor="middle" >样本混合</text>
+<path d="M1315 575H1382" fill="none" stroke="#005BAC" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="1349" y="560" font-size="15" fill="#005BAC" font-weight="700" text-anchor="middle" >SFT</text>
+<circle cx="1425" cy="573" r="32" fill="#EAF3FC" stroke="none" stroke-width="1.5"/>
+<g transform="translate(1402 550) scale(0.9583333333333334)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="4"/><circle cx="9" cy="35" r="4"/><circle cx="25" cy="8" r="4"/><circle cx="25" cy="24" r="4"/><circle cx="25" cy="40" r="4"/><circle cx="41" cy="16" r="4"/><circle cx="41" cy="33" r="4"/><path d="m13 12 8-4m-8 4 8 12m-8 11 8-11m-8 11 8 5m8-32 8 8m-8 8 8-8m-8 8 8 9m-8 7 8-7"/></g>
+<g transform="translate(1444 568) scale(0.6041666666666666)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m24 4 17 7v12c0 10-7 16-17 21C14 39 7 33 7 23V11Z"/><path d="m15 23 6 6 13-14"/></g>
+<text x="1430" y="622" font-size="16" fill="#005BAC" font-weight="600" text-anchor="middle" >SFT更新</text>
+</g>
+<path d="M740 642V668" fill="none" stroke="#7561AC" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-purple)" stroke-dasharray="7 6"/>
+<rect x="30" y="674" width="950" height="151" rx="7" fill="#FAF8FD" stroke="#CFC4E2" stroke-width="1.3" />
+<text x="48" y="702" font-size="20" fill="#7561AC" font-weight="700" text-anchor="start" >GRPO（独立探索）</text>
+<rect x="48" y="722" width="170" height="61" rx="5" fill="white" stroke="#D8CFE6" stroke-width="1" />
+<g transform="translate(61 737) scale(0.5833333333333334)" stroke="#7561AC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4h20l8 8v32H11Z"/><path d="M31 4v9h8M17 22h16m-16 7h16m-16 7h11"/></g>
+<text x="101" y="759" font-size="18" fill="#153B5B" font-weight="600" text-anchor="start" >审计任务</text>
+<path d="M224 754H249" fill="none" stroke="#7561AC" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<rect x="260" y="722" width="44" height="61" rx="4" fill="white" stroke="#CFC4E2" stroke-width="1" />
+<text x="282" y="748" font-size="20" fill="#7561AC" font-weight="600" text-anchor="middle" >y₁</text>
+<path d="M269 759H295M269 768H289" fill="none" stroke="#7561AC" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="317" y="722" width="44" height="61" rx="4" fill="#EDE7F8" stroke="#CFC4E2" stroke-width="1" />
+<text x="339" y="748" font-size="20" fill="#7561AC" font-weight="600" text-anchor="middle" >y₂</text>
+<path d="M326 759H352M326 768H346" fill="none" stroke="#7561AC" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="374" y="722" width="44" height="61" rx="4" fill="white" stroke="#CFC4E2" stroke-width="1" />
+<text x="396" y="748" font-size="20" fill="#7561AC" font-weight="600" text-anchor="middle" >y₃</text>
+<path d="M383 759H409M383 768H403" fill="none" stroke="#7561AC" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="431" y="722" width="44" height="61" rx="4" fill="#EDE7F8" stroke="#CFC4E2" stroke-width="1" />
+<text x="453" y="748" font-size="20" fill="#7561AC" font-weight="600" text-anchor="middle" >y₄</text>
+<path d="M440 759H466M440 768H460" fill="none" stroke="#7561AC" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="367" y="807" font-size="15" fill="#7561AC" font-weight="400" text-anchor="middle" >4个回答 Rollout</text>
+<path d="M480 754H512" fill="none" stroke="#7561AC" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<rect x="522" y="722" width="438" height="61" rx="5" fill="white" stroke="#D8CFE6" stroke-width="1" />
+<g transform="translate(543 731) scale(0.7083333333333334)" stroke="#7561AC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="19"/><path d="m13 24 8 8 15-17"/></g>
+<text x="761" y="749" font-size="20" fill="#7561AC" font-weight="600" text-anchor="middle" >验证评分 → 组内更新</text>
+<path d="M609 768h61m12 0h61m12 0h61m12 0h61" fill="none" stroke="#BBA8D2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="741" y="807" font-size="15" fill="#7561AC" font-weight="400" text-anchor="middle" >相对优势 ↑ / ↓</text>
+<path d="M1295 642V668" fill="none" stroke="#005BAC" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="1020" y="674" width="550" height="151" rx="7" fill="#EAF3FC" stroke="#8BB4D4" stroke-width="1.3" />
+<g transform="translate(1041 694) scale(1.4583333333333333)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="4"/><circle cx="9" cy="35" r="4"/><circle cx="25" cy="8" r="4"/><circle cx="25" cy="24" r="4"/><circle cx="25" cy="40" r="4"/><circle cx="41" cy="16" r="4"/><circle cx="41" cy="33" r="4"/><path d="m13 12 8-4m-8 4 8 12m-8 11 8-11m-8 11 8 5m8-32 8 8m-8 8 8-8m-8 8 8 9m-8 7 8-7"/></g>
+<g transform="translate(1097 735) scale(0.6041666666666666)" stroke="#005BAC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m24 4 17 7v12c0 10-7 16-17 21C14 39 7 33 7 23V11Z"/><path d="m15 23 6 6 13-14"/></g>
+<text x="1150" y="738" font-size="26" fill="#005BAC" font-weight="700" text-anchor="start" >FinSec模型</text>
+<rect x="1040" y="779" width="153" height="29" rx="4" fill="white" stroke="#C7D8E7" stroke-width="1" />
+<text x="1116.5" y="799" font-size="16" fill="#005BAC" font-weight="500" text-anchor="middle" >FinEval</text>
+<rect x="1205" y="779" width="177" height="29" rx="4" fill="white" stroke="#C7D8E7" stroke-width="1" />
+<text x="1293.5" y="799" font-size="16" fill="#005BAC" font-weight="500" text-anchor="middle" >GCG / PAIR</text>
+<rect x="1394" y="779" width="155" height="29" rx="4" fill="white" stroke="#C7D8E7" stroke-width="1" />
+<text x="1471.5" y="799" font-size="16" fill="#005BAC" font-weight="500" text-anchor="middle" >MIA</text>
+</g>
+<path d="M1295 827V870H440V892" fill="none" stroke="#005BAC" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g id="pi-agent-integration">
+<rect x="12" y="885" width="1576" height="77" rx="7" fill="white" stroke="#BDCFDF" stroke-width="1.4" />
+<text x="30" y="931" font-size="22" fill="#153B5B" font-weight="700" text-anchor="start" >(c) Pi-Agent接入</text>
+<rect x="316" y="902" width="248" height="43" rx="5" fill="#EAF3FC" stroke="#C7D8E7" stroke-width="1" />
+<text x="440" y="931" font-size="20" fill="#005BAC" font-weight="700" text-anchor="middle" >FinSec模型</text>
+<path d="M571 924H609" fill="none" stroke="#005BAC" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="618" y="902" width="224" height="43" rx="5" fill="#EAF3FC" stroke="#C7D8E7" stroke-width="1" />
+<text x="730" y="931" font-size="20" fill="#005BAC" font-weight="700" text-anchor="middle" >接入 Pi-Agent</text>
+<path d="M850 924H888" fill="none" stroke="#005BAC" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="915" y="931" font-size="21" fill="#153B5B" font-weight="600" text-anchor="start" >金融密码学代码审计</text>
+</g></g></svg>
