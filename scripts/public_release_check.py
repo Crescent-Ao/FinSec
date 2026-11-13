@@ -7,6 +7,7 @@ FORBIDDEN_SUFFIX={'.safetensors','.pt','.pth','.ckpt','.bin','.gguf','.onnx','.p
 PATTERNS={
  'API credential':re.compile(r'\b(?:sk-[A-Za-z0-9]{25,}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,})\b'),
  'private key':re.compile(r'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----'),
+ 'ModelScope credential':re.compile(r'\bms-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\b'),
  'inline SSH password':re.compile(r'sshpass\s+-p\s+[^\s]+'),
 }
 

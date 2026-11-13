@@ -1,10 +1,10 @@
 # FinSec
 
-[![CI](https://github.com/Crescent-Ao/FinSec/actions/workflows/ci.yml/badge.svg)](https://github.com/Crescent-Ao/FinSec/actions/workflows/ci.yml) · [v0.1.0](https://github.com/Crescent-Ao/FinSec/releases/tag/v0.1.0)
+[![CI](https://github.com/Crescent-Ao/FinSec/actions/workflows/ci.yml/badge.svg)](https://github.com/Crescent-Ao/FinSec/actions/workflows/ci.yml) · [v0.1.1](https://github.com/Crescent-Ao/FinSec/releases/tag/v0.1.1)
 
 **Financial Agent Capability Enhancement and Safety Validation**
 
-[中文](README.md) · [Method](docs/METHOD.md) · [Reproduction](docs/REPRODUCE.md) · [Agent demonstrations](docs/DEMO.md) · [Results](docs/RESULTS.md) · [ModelScope project artifact](https://modelscope.cn/models/aiops11/Qwen3.5-9B-FinSec)
+[中文](README.md) · [Method](docs/METHOD.md) · [Reproduction](docs/REPRODUCE.md) · [Agent demonstrations](docs/DEMO.md) · [Results](docs/RESULTS.md) · [ModelScope model](https://modelscope.cn/models/aiops11/Qwen3.5-9B-FinSec)
 
 FinSec connects multi-source data distillation, staged post-training and executable cryptographic code auditing. The main training path is financial SFT → safety/tool SFT → safety DPO → adversarial SFT with capability replay. The final model is called **FinSec**. GRPO remains an independent exploratory branch.
 
@@ -61,6 +61,17 @@ node --test pi_crypto_agent/agent_described.test.mjs pi_crypto_agent/agent_nativ
 Actual Python/Bash tool execution also requires Linux Bubblewrap. GPU environments and optional HarmBench dependencies are documented in [environment/README.md](environment/README.md).
 
 GitHub Actions runs the CPU/protocol tests, public-release checks and documentation validation on pushes and pull requests.
+
+## Download the current FinSec adapter
+
+The existing ModelScope repository now publishes the final adapter matching the unified experiments, pinned as `finsec-nf4-v1.0.0`. Its approximately 173MB weights load on the original NF4 base without merging.
+
+```bash
+python -m pip install -r environment/requirements.modelscope.txt
+python scripts/modelscope_finsec.py download --output models/FinSec
+```
+
+The base model is prepared separately. The previous two-stage merged model is archived as `legacy-two-stage-20261113`. See [ModelScope release and loading](docs/MODELSCOPE.md).
 
 ## Plan, run and collect experiments
 

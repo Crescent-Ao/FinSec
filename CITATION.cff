@@ -4,8 +4,8 @@ title: "FinSec: Financial Agent Capability Enhancement and Safety Validation"
 type: software
 authors:
   - name: "FinSec Team 1123"
-version: 0.1.0
-date-released: 2026-11-12
+version: 0.1.1
+date-released: 2026-11-13
 url: "https://github.com/Crescent-Ao/FinSec"
 repository-code: "https://github.com/Crescent-Ao/FinSec"
 license: Apache-2.0

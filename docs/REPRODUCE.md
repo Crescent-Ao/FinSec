@@ -21,7 +21,7 @@ python3 finsec.py demo
 
 ## 2. 准备模型与可选评测资源
 
-模型权重不放入Git。既有[ModelScope阶段成果](https://modelscope.cn/models/aiops11/Qwen3.5-9B-FinSec)与本仓库属于同一项目；复现本文完整五阶段表，需要取得对应阶段的适配器，不能用同一适配器替代多个阶段。通用基座、各阶段适配器和官方HarmBench分类器独立准备。
+模型权重不放入GitHub。当前[ModelScope模型](https://modelscope.cn/models/aiops11/Qwen3.5-9B-FinSec)已发布与本文最终FinSec一致的NF4配套LoRA适配器，固定版本为`finsec-nf4-v1.0.0`，下载方式见[模型发布说明](MODELSCOPE.md)。复现完整五阶段表仍需取得其他阶段的对应适配器，不能用同一适配器替代多个阶段。通用基座、各阶段适配器和官方HarmBench分类器独立准备。
 
 GPU环境按[环境说明](../environment/README.md)安装。训练/目标推理与HarmBench分别使用独立虚拟环境。FinEval下载与官方攻击源码准备：
 

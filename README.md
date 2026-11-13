@@ -1,10 +1,10 @@
 # FinSec
 
-[![CI](https://github.com/Crescent-Ao/FinSec/actions/workflows/ci.yml/badge.svg)](https://github.com/Crescent-Ao/FinSec/actions/workflows/ci.yml) · [v0.1.0](https://github.com/Crescent-Ao/FinSec/releases/tag/v0.1.0)
+[![CI](https://github.com/Crescent-Ao/FinSec/actions/workflows/ci.yml/badge.svg)](https://github.com/Crescent-Ao/FinSec/actions/workflows/ci.yml) · [v0.1.1](https://github.com/Crescent-Ao/FinSec/releases/tag/v0.1.1)
 
 **面向金融应用的智能体能力增强与安全验证**
 
-[English](README.en.md) · [方法框架](docs/METHOD.md) · [五阶段复现](docs/REPRODUCE.md) · [Agent真实案例](docs/DEMO.md) · [实验结果](docs/RESULTS.md) · [ModelScope阶段成果](https://modelscope.cn/models/aiops11/Qwen3.5-9B-FinSec)
+[English](README.en.md) · [方法框架](docs/METHOD.md) · [五阶段复现](docs/REPRODUCE.md) · [Agent真实案例](docs/DEMO.md) · [实验结果](docs/RESULTS.md) · [FinSec模型下载](https://modelscope.cn/models/aiops11/Qwen3.5-9B-FinSec)
 
 FinSec构建从数据蒸馏、多阶段后训练到密码学代码审计Agent的完整工程流程。项目以不超过10B的通用指令模型为基础，采用统一NF4量化口径验证金融能力、越狱鲁棒性、训练数据成员隐私与工具审计效果。
 
@@ -102,6 +102,17 @@ FINSEC_PYTHON="$PWD/.venv/bin/python" bash scripts/check_tools.sh
 ```
 
 其中最后一项使用脚本化回复连接真正的Pi工具循环与执行沙箱，用于验证接线；它不构成一次模型质量测评。
+
+## 下载当前FinSec模型
+
+ModelScope原地址已更新为最终FinSec适配器，固定版本`finsec-nf4-v1.0.0`。下载后采用原实验的NF4基座 + 未合并LoRA加载：
+
+```bash
+python -m pip install -r environment/requirements.modelscope.txt
+python scripts/modelscope_finsec.py download --output models/FinSec
+```
+
+适配器约173MB；基座独立准备。原两阶段合并权重保留在历史版本。下载、NF4推理及Agent接入见[ModelScope发布说明](docs/MODELSCOPE.md)。
 
 ## 五阶段统一评测
 
